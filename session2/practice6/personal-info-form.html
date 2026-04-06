@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Bài 6 - Hồ sơ thông tin cá nhân</title>
+    </head>
+    <body>
+        <header>
+            <h2>Hồ sơ thông tin cá nhân</h2>
+        </header>
+        <main>
+            <form action="" method="post">
+                <fieldset style="border: 2px solid black">
+                    <legend>Thông tin cá nhân</legend>
+                    <div>
+                        <label for="fullname">Tên:</label>
+                        <input
+                            type="text"
+                            name="fullname"
+                            id="fullname"
+                            placeholder="Nhập họ và tên..."
+                            required
+                        />
+                    </div>
+                    <br />
+                    <div>
+                        <label for="dob">Ngày sinh:</label>
+                        <input
+                            type="date"
+                            name="dob"
+                            id="dob"
+                            lang="vi"
+                            required
+                        />
+                    </div>
+                </fieldset>
+                <br />
+                <fieldset style="border: 2px solid black">
+                    <legend>Thông tin liên hệ</legend>
+                    <div>
+                        <label for="email">Email: </label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="example@email.com"
+                            required
+                        />
+                    </div>
+                    <br />
+                    <div>
+                        <label for="phone">Số điện thoại: </label>
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="0912345678"
+                            required
+                        />
+                    </div>
+                </fieldset>
+                <div>
+                    <br />
+                    <label for="note">Ghi chú bổ sung:</label>
+                    <br />
+                    <br />
+                    <textarea
+                        id="note"
+                        name="note"
+                        rows="5"
+                        cols="60"
+                        placeholder="Nhập ghi chú của bạn tại đây..."
+                    ></textarea>
+                </div>
+                <button type="submit">Lưu hồ sơ</button>
+            </form>
+        </main>
+        <script>
+            document
+                .querySelector('form')
+                .addEventListener('submit', function (e) {
+                    e.preventDefault()
+                    const formData = new FormData(this)
+                    for (const [key, value] of formData) {
+                        console.log(key + ': ' + value)
+                    }
+                })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Bài 9 - Hồ sơ ứng tuyển</title>
+    </head>
+    <body>
+        <header>
+            <h1>Nộp hồ sơ ứng tuyển</h1>
+        </header>
+        <main>
+            <form action="" method="post" enctype="multipart/form-data">
+                <fieldset style="border: 2px solid black">
+                    <legend>Thông tin liên hệ</legend>
+                    <div>
+                        <label for="fullname">Họ và tên:</label>
+                        <input
+                            type="text"
+                            name="fullname"
+                            id="fullname"
+                            required
+                        />
+                    </div>
+                    <br />
+                    <div>
+                        <label for="phone">Số điện thoại:</label>
+                        <input
+                            type="tel"
+                            name="phone"
+                            id="phone"
+                            placeholder="0912345678"
+                            pattern="0[1-9][0-9]{8}"
+                            title="Số điện thoại phải gồm 10 chữ số, bắt đầu bằng 0, chữ số thứ hai từ 1-9"
+                            required
+                        />
+                    </div>
+                </fieldset>
+                <br />
+                <fieldset style="border: 2px solid black">
+                    <legend>Hồ sơ đính kèm</legend>
+                    <label for="resume">Tải lên CV (Định dạng PDF/Word):</label>
+                    <input
+                        type="file"
+                        id="resume"
+                        name="resume"
+                        accept=".pdf, .docx"
+                        required
+                    />
+                </fieldset>
+                <br />
+                <button type="submit">Nộp hồ sơ</button>
+            </form>
+        </main>
+        <script>
+            document
+                .querySelector('form')
+                .addEventListener('submit', function (e) {
+                    e.preventDefault()
+                    const formData = new FormData(this)
+                    for (const [key, value] of formData) {
+                        console.log(key + ': ' + value)
+                    }
+                })
+        </script>
+    </body>
+</html>

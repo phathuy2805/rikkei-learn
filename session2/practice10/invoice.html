@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Bài 10 - Giao diện hóa đơn và đánh giá toàn diện</title>
+    </head>
+    <body>
+        <main>
+            <section>
+                <h2>Chi tiết Hóa đơn Mua hàng</h2>
+                <table>
+                    <caption>
+                        Hóa đơn điện tử #HD-20260310
+                    </caption>
+                    <tr>
+                        <th scope="col">Tên sản phẩm</th>
+                        <th scope="col">Chi tiết</th>
+                        <th scope="col">Đơn giá</th>
+                        <th scope="col">Thành tiền</th>
+                    </tr>
+                    <tr>
+                        <td>Áo thun Lập trình viên</td>
+                        <td>
+                            <ul>
+                                <li>Màu sắc: Đen</li>
+                                <li>Kích thước: XL</li>
+                                <li>Chất liệu: Cotton 100%</li>
+                            </ul>
+                        </td>
+                        <td align="right">250.000đ</td>
+                        <td align="right">250.000đ</td>
+                    </tr>
+                    <tr>
+                        <td>Bàn phím cơ bản</td>
+                        <td>
+                            <ul>
+                                <li>Switch: Red</li>
+                                <li>Layout: TKL</li>
+                            </ul>
+                        </td>
+                        <td align="right">800.000đ</td>
+                        <td align="right">800.000đ</td>
+                    </tr>
+                    <tr>
+                        <th colspan="3" scope="rowgroup" align="right">
+                            Tổng cộng thanh toán:
+                        </th>
+                        <th scope="rowgroup" align="right">1.050.000đ</th>
+                    </tr>
+                </table>
+            </section>
+            <hr />
+            <section>
+                <h2>Đánh giá trải nghiệm mua hàng</h2>
+                <form action="" method="post">
+                    <fieldset style="border: 2px solid black">
+                        <legend>Phản hồi của bạn</legend>
+                        <label for="rating">Mức độ hài lòng: </label>
+                        <select id="rating" name="rating" required>
+                            <option value="">-- Vui lòng chọn số sao --</option>
+                            <option value="5">5</option>
+                            <option value="4">4</option>
+                            <option value="3">3</option>
+                            <option value="2">2</option>
+                            <option value="1">1</option>
+                        </select>
+                        <br />
+                        <br />
+
+                        <label for="comment">Lời nhận xét chi tiết:</label>
+                        <br />
+                        <textarea
+                            id="comment"
+                            name="comment"
+                            rows="4"
+                            cols="60"
+                            placeholder="Hãy chia sẻ trải nghiệm của bạn về sản phẩm và dịch vụ..."
+                        ></textarea>
+                    </fieldset>
+                    <br />
+                    <button type="submit">Gửi phản hồi</button>
+                </form>
+            </section>
+        </main>
+        <script>
+            document
+                .querySelector('form')
+                .addEventListener('submit', function (e) {
+                    e.preventDefault()
+                    const formData = new FormData(this)
+                    for (const [key, value] of formData) {
+                        console.log(key + ': ' + value)
+                    }
+                })
+        </script>
+    </body>
+</html>

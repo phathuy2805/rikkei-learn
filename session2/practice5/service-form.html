@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Bài 5 - Biểu mẫu khảo sát dịch vụ</title>
+    </head>
+    <body>
+        <header>
+            <h2>Khảo sát dịch vụ khách hàng</h2>
+        </header>
+        <main>
+            <form action="" method="post">
+                <p>
+                    <label for="age">Độ tuổi của bạn:</label>
+                    <input
+                        type="number"
+                        id="age"
+                        name="age"
+                        min="0"
+                        max="100"
+                        required
+                    />
+                </p>
+                <fieldset>
+                    <legend>Giới tính của bạn là gì ?</legend>
+                    <input
+                        type="radio"
+                        id="male"
+                        name="sex"
+                        value="male"
+                        checked
+                    />
+                    <label for="male">Nam</label>
+                    <input type="radio" id="female" name="sex" value="female" />
+                    <label for="female">Nữ</label>
+                    <input type="radio" id="other" name="sex" value="other" />
+                    <label for="other">Khác</label>
+                </fieldset>
+                <fieldset>
+                    <legend>
+                        Dịch vụ bạn đang quan tâm (có thể chọn nhiều)
+                    </legend>
+                    <input
+                        type="checkbox"
+                        id="website"
+                        name="service"
+                        value="website"
+                        checked
+                    />
+                    <label for="website">Website</label>
+                    <input
+                        type="checkbox"
+                        id="mobile-app"
+                        name="service"
+                        value="mobile-app"
+                    />
+                    <label for="mobile-app">Mobile App</label>
+                    <input
+                        type="checkbox"
+                        id="marketing"
+                        name="service"
+                        value="marketing"
+                    />
+                    <label for="marketing">Marketing</label>
+                </fieldset>
+                <p>
+                    Quốc gia đang sinh sống:
+                    <select name="country" id="country" required>
+                        <option value="" selected>-- Vui lòng chọn --</option>
+                        <option value="vietnam">Việt Nam</option>
+                        <option value="japan">Nhật Bản</option>
+                        <option value="usa">Hoa Kỳ</option>
+                    </select>
+                </p>
+                <button type="submit">Gửi thông tin</button>
+            </form>
+        </main>
+
+        <script>
+            document
+                .querySelector('form')
+                .addEventListener('submit', function (e) {
+                    e.preventDefault()
+                    const formData = new FormData(this)
+                    for (const [key, value] of formData) {
+                        console.log(key + ': ' + value)
+                    }
+                })
+        </script>
+    </body>
+</html>

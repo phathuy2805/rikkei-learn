@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Bài 8 - Đặt vé sự kiện âm nhạc</title>
+    </head>
+    <body>
+        <header>
+            <h1>Đăng Ký Đặt Vé Sự Kiện Âm Nhạc</h1>
+        </header>
+        <main>
+            <form action="" method="post">
+                <div>
+                    <label for="fullname">Họ và tên:</label>
+                    <input
+                        type="text"
+                        id="fullname"
+                        name="fullname"
+                        placeholder="Nhập họ và tên..."
+                        required
+                        minlength="3"
+                        maxlength="50"
+                    />
+                </div>
+                <br />
+                <div>
+                    <label for="ticket">Số lượng vé:</label>
+                    <input
+                        type="number"
+                        id="ticket"
+                        name="ticket"
+                        required
+                        min="1"
+                        max="5"
+                    />
+                </div>
+                <br />
+                <div>
+                    <label for="vipcode">Mã vé VIP (Đã cấp sẵn): </label>
+                    <input
+                        type="text"
+                        id="vipcode"
+                        name="vipcode"
+                        value="MUSIC-VIP-2026"
+                        readonly
+                    />
+                </div>
+                <br />
+                <div>
+                    <label for="discount">Mã giảm giá nội bộ: </label>
+                    <input
+                        type="text"
+                        id="discount"
+                        name="discount"
+                        value="NOT-ELIGIBLE"
+                        disabled
+                    />
+                </div>
+                <br />
+
+                <button type="submit">Xác nhận đặt vé</button>
+            </form>
+        </main>
+        <script>
+            document
+                .querySelector('form')
+                .addEventListener('submit', function (e) {
+                    e.preventDefault()
+                    const formData = new FormData(this)
+                    for (const [key, value] of formData) {
+                        console.log(key + ': ' + value)
+                    }
+                })
+        </script>
+    </body>
+</html>

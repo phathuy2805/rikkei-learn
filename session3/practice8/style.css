@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: hsl(0, 0%, 93%);
+    display: flex;
+    justify-content: center;
+    padding: 3rem;
+}
+
+blockquote {
+    position: relative;
+    max-width: 500px;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 4px;
+    padding: 2.5rem 2.5rem;
+    box-shadow: 0 2px 12px hsla(0, 0%, 0%, 0.08);
+    overflow: hidden;
+}
+
+blockquote p::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 4px;
+    border-radius: 2px;
+    background-color: hsl(207, 70%, 45%);
+}
+
+blockquote::before {
+    content: '\201C';
+    font-size: 2.5rem;
+    color: hsl(218, 9%, 75%);
+    line-height: 1;
+    position: absolute;
+    left: 1.5rem;
+    top: 2.2rem;
+}
+
+blockquote::after {
+    content: '\201D';
+    font-size: 2.5rem;
+    color: hsl(218, 9%, 75%);
+    line-height: 1;
+    position: absolute;
+    right: 1.5rem;
+    bottom: 3.5rem;
+}
+
+blockquote p {
+    font-size: 1rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: hsl(210, 10%, 35%);
+}
+
+blockquote p::first-letter {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: hsl(207, 40%, 45%);
+    float: left;
+    line-height: 1;
+    margin-right: 0.15rem;
+    margin-top: 0.1rem;
+}
+
+blockquote footer {
+    text-align: right;
+    font-size: 0.9rem;
+    color: hsl(0, 1%, 68%);
+    margin-top: 1rem;
+    font-weight: 600;
+}

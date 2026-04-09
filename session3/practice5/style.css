@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+
+.card {
+    font-family: 'Inter', sans-serif;
+    border-radius: 12px;
+    padding: 1em;
+    margin: 1em;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    width: 280px;
+    aspect-ratio: 5/7;
+    text-align: center;
+}
+
+.card img {
+    width: 80%;
+    display: block;
+    margin: 3rem 2rem;
+}
+
+.card-info {
+    padding-top: 1em;
+}
+
+.card-info h3 {
+    color: #f86866;
+    font-weight: 900;
+}
+
+.card-info button {
+    display: block;
+    margin: 1em auto 0;
+    padding: 0.625em 1.75em;
+    background-color: rgb(148, 221, 187);
+    color: #fff;
+    border: none;
+    border-radius: 0.25em;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.card-info button:hover {
+    background-color: rgba(148, 221, 187, 0.5);
+    color: rgba(121, 121, 121, 0.5);
+}

@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background-color: hsl(0, 0%, 93%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.pricing-pack {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.plan {
+    background-color: hsl(0, 0%, 100%);
+    border: 1px solid hsl(0, 0%, 85%);
+    border-radius: 8px;
+    padding: 2rem 1.5rem;
+    width: 240px;
+    text-align: center;
+    transition:
+        transform 0.3s,
+        border-color 0.3s;
+}
+
+.plan:nth-child(2) {
+    background-color: hsl(207, 60%, 95%);
+    border-color: hsl(207, 50%, 75%);
+}
+
+.plan:hover {
+    border-color: hsl(207, 70%, 45%);
+    transform: scale(1.05);
+}
+
+.plan:hover h2 {
+    font-weight: 900;
+}
+
+.plan h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: hsl(0, 0%, 20%);
+    margin-bottom: 1rem;
+}
+
+.plan:nth-child(2) h2 {
+    color: hsl(207, 70%, 35%);
+    font-weight: 700;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: hsl(0, 0%, 25%);
+    margin-bottom: 1.5rem;
+}
+
+.price span {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: hsl(0, 0%, 50%);
+}
+
+.plan:nth-child(2) .price {
+    color: hsl(207, 70%, 35%);
+}
+
+.plan ul {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.plan ul li {
+    font-size: 0.85rem;
+    color: hsl(0, 0%, 40%);
+    padding: 0.4rem 0;
+}
+
+.plan button {
+    font-family: inherit;
+    font-size: 0.85rem;
+    padding: 0.5rem 1.5rem;
+    border: 1px solid hsl(0, 0%, 75%);
+    border-radius: 20px;
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(0, 0%, 35%);
+    cursor: pointer;
+}
+
+.plan:nth-child(2) button {
+    background-color: hsl(207, 55%, 45%);
+    border-color: hsl(207, 55%, 45%);
+    color: hsl(0, 0%, 100%);
+}
+
+.plan button:hover {
+    opacity: 0.85;
+}

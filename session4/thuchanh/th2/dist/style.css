@@ -1,4 +1,3 @@
-@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -12,8 +11,8 @@ body {
 
 .product-card {
   width: 320px;
-  margin: 2rem auto; /* margin: khoảng cách bên ngoài, căn giữa */
-  padding: 1.5rem; /* padding: đệm bên trong, chữ không sát viền */
+  margin: 2rem auto;
+  padding: 1.5rem;
   border: 2px solid #3a8fd4;
   border-radius: 8px;
   background-color: #fff;

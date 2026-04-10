@@ -6,8 +6,7 @@
 
 body {
     background-color: hsl(0, 0%, 93%);
-    display: flex;
-    justify-content: center;
+    text-align: center;
     padding: 3rem;
 }
 
@@ -19,6 +18,8 @@ blockquote {
     padding: 2.5rem 2.5rem;
     box-shadow: 0 2px 12px hsla(0, 0%, 0%, 0.08);
     overflow: hidden;
+    margin: 0 auto;
+    text-align: left;
 }
 
 blockquote p::before {

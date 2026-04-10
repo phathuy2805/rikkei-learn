@@ -1,0 +1,24 @@
+$font-main: 'Segoe UI', Tahoma, sans-serif;
+$banner-height: 50px;
+$banner-bg: #e04a2f;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-main;
+}
+
+.banner {
+    width: 100%;
+    height: $banner-height;
+    line-height: $banner-height;
+    text-align: center;
+    background-color: $banner-bg;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+}

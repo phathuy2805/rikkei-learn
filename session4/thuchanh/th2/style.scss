@@ -1,0 +1,41 @@
+$font-main: 'Segoe UI', Tahoma, sans-serif;
+$color-price: #e74c3c;
+$color-border: #3a8fd4;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-main;
+    background-color: #f0f0f0;
+}
+
+.product-card {
+    width: 320px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    border: 2px solid $color-border;
+    border-radius: 8px;
+    background-color: #fff;
+
+    h3 {
+        font-size: 18px;
+        margin-bottom: 0.5rem;
+    }
+
+    p {
+        font-size: 14px;
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 0.75rem;
+    }
+
+    .price {
+        font-size: 15px;
+        font-weight: 700;
+        color: $color-price;
+    }
+}

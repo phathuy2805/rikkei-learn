@@ -1,0 +1,35 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background-color: #f0f0f0;
+}
+
+.product-card {
+  width: 320px;
+  margin: 2rem auto; /* margin: khoảng cách bên ngoài, căn giữa */
+  padding: 1.5rem; /* padding: đệm bên trong, chữ không sát viền */
+  border: 2px solid #3a8fd4;
+  border-radius: 8px;
+  background-color: #fff;
+}
+.product-card h3 {
+  font-size: 18px;
+  margin-bottom: 0.5rem;
+}
+.product-card p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+.product-card .price {
+  font-size: 15px;
+  font-weight: 700;
+  color: #e74c3c;
+}

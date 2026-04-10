@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background-color: #dcdcdc;
+}
+
+.popup-container {
+    min-height: 100vh;
+    padding-top: 30vh;
+}
+
+.popup {
+    width: 550px;
+    background-color: hsl(0, 0%, 100%);
+    box-shadow: 0 0 16px hsla(0, 0%, 0%, 0.1);
+    border-radius: 1rem;
+    text-align: center;
+    padding: 2rem;
+    margin: 0 auto;
+}
+.popup h1 {
+    margin-bottom: 1rem;
+    font-size: 24px;
+    color: #e05a31;
+}
+.popup p {
+    font-size: 14px;
+    color: hsl(0, 0%, 22%);
+    margin-bottom: 1rem;
+}
+
+input,
+.btn-submit {
+    font-family: inherit;
+    font-size: 14px;
+    padding: 0.5rem;
+    border-radius: 3px;
+}
+
+input {
+    margin-top: 0.5rem;
+    border: 1px solid hsl(0, 0%, 73%);
+    width: 60%;
+}
+
+.btn-submit {
+    margin-left: 0.75rem;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    background-color: rgb(28, 146, 241);
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+}

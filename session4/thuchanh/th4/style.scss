@@ -1,0 +1,53 @@
+$font-main: 'Segoe UI', Tahoma, sans-serif;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-main;
+    background-color: #f0f0f0;
+    padding: 2rem;
+}
+
+.row {
+    background-color: #fff;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0;
+}
+
+.box {
+    display: inline-block;
+    width: 120px;
+    aspect-ratio: 1 / 1;
+    margin: 0.5rem;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 120px;
+}
+
+.green {
+    background-color: #4caf50;
+}
+
+.orange {
+    background-color: #ff9800;
+}
+
+.purple {
+    background-color: #9b59b6;
+}
+
+.display-none {
+    display: none;
+}
+
+.visibility-hidden {
+    visibility: hidden;
+}

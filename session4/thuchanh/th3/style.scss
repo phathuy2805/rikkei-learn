@@ -1,0 +1,35 @@
+$font-main: 'Segoe UI', Tahoma, sans-serif;
+$btn-bg: #f5c518;
+$btn-border: #c9a200;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-main;
+    background-color: #f0f0f0;
+    padding: 2rem;
+}
+
+.btn-cart {
+    padding: 12px 24px;
+    background-color: $btn-bg;
+    border: 2px solid $btn-border;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+
+    .btn-icon {
+        vertical-align: middle;
+        margin-right: 8px;
+    }
+
+    span {
+        vertical-align: middle;
+    }
+}

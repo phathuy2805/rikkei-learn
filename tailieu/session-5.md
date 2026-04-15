@@ -78,7 +78,7 @@ flex-direction: row (mặc định)
 
 Main Axis (Trục chính) →
 ┌──────────────────────────────┐
-│  [Item 1]  [Item 2]  [Item 3] │  ↕ Cross Axis (Trục chéo)
+│ [Item 1]  [Item 2]  [Item 3] │  ↕ Cross Axis (Trục chéo)
 └──────────────────────────────┘
 
 flex-direction: column

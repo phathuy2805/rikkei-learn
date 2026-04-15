@@ -1,0 +1,156 @@
+$color-primary: #3b82f6;
+$color-primary-dark: #2563eb;
+$color-green: #22c55e;
+$color-green-dark: #16a34a;
+$color-white: #fff;
+$color-text: #333;
+$color-label: #555;
+$color-border: #ddd;
+$color-bg: #f0f4f8;
+$font-main: 'Segoe UI', Tahoma, sans-serif;
+$breakpoint-mobile: 768px;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-main;
+    background-color: $color-bg;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+.booking {
+    display: flex;
+    max-width: 900px;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background-color: $color-white;
+
+    .info {
+        flex: 1;
+        background-color: $color-primary;
+        color: $color-white;
+        padding: 2rem 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+
+            li {
+                font-size: 0.9rem;
+            }
+        }
+    }
+
+    .form-wrapper {
+        flex: 1;
+        padding: 2rem 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h2 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: $color-text;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+    }
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+
+    label {
+        font-size: 1rem;
+        color: $color-label;
+        font-weight: 600;
+    }
+
+    input,
+    select {
+        padding: 0.7rem 0.8rem;
+        border: 1px solid $color-border;
+        border-radius: 6px;
+        font-size: 0.9rem;
+        font-family: $font-main;
+        outline: none;
+        transition: border-color 0.2s;
+
+        &:focus {
+            border-color: $color-primary;
+        }
+
+        &::placeholder {
+            color: #aaa;
+        }
+    }
+
+    select {
+        cursor: pointer;
+    }
+}
+
+.btn-submit {
+    padding: 0.8rem;
+    background-color: $color-green;
+    color: $color-white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 0.5rem;
+
+    &:hover {
+        background-color: $color-green-dark;
+    }
+}
+
+@media (max-width: $breakpoint-mobile) {
+    .booking {
+        flex-direction: column-reverse;
+
+        .info,
+        .form-wrapper {
+            padding: 2rem 1.5rem;
+        }
+    }
+}

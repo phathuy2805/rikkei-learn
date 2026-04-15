@@ -1,0 +1,40 @@
+$font-main: 'Segoe UI', Tahoma, sans-serif;
+$bg-nav: #15273a;
+$color-light: #fff;
+$color-link: #ccc;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-main;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $bg-nav;
+    padding: 1rem 2rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $color-light;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+
+    a {
+        color: $color-link;
+        text-decoration: none;
+        font-size: 0.875rem;
+    }
+}

@@ -1,0 +1,43 @@
+$font-main: 'Segoe UI', Tahoma, sans-serif;
+$bg-footer: #192941;
+$color-light: #ffffff;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-main;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $bg-footer;
+    padding: 1rem 2rem;
+}
+
+.copyright {
+    font-size: 14px;
+    color: $color-light;
+}
+
+.social-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+
+    a {
+        color: $color-light;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: bold;
+    }
+}

@@ -1,0 +1,95 @@
+$color-primary: #11d19e;
+$color-text: #333;
+$color-role: $color-primary;
+$color-desc: #666;
+$color-bg: #f0f0f0;
+$color-white: #fff;
+$color-border: #e0e0e0;
+$font-main: 'Segoe UI', Tahoma, sans-serif;
+$card-basis: 240px;
+$breakpoint-mobile: 768px;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-main;
+    background-color: $color-bg;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.team {
+    max-width: 1000px;
+
+    h2 {
+        text-align: center;
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: $color-text;
+        margin-bottom: 2rem;
+    }
+
+    .list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    .card {
+        flex-basis: $card-basis;
+        flex-grow: 1;
+        flex-shrink: 1;
+        background-color: $color-white;
+        border: 1px solid $color-border;
+        border-radius: 8px;
+        padding: 1.5rem 1.5rem;
+        text-align: center;
+        border-top: 4px solid $color-primary;
+        transition: box-shadow 0.2s;
+        box-shadow: 0 4px 16px rgba(122, 121, 121, 0.1);
+
+        .avatar {
+            width: 80px;
+            aspect-ratio: 1/1;
+            margin: 0 auto 1rem;
+            border-radius: 50%;
+            background-color: #e8e8e8;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: $color-text;
+            margin-bottom: 0.2rem;
+        }
+
+        .role {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: $color-role;
+            text-transform: uppercase;
+            margin-bottom: 0.8rem;
+        }
+
+        .desc {
+            font-size: 0.82rem;
+            color: $color-desc;
+            line-height: 1.5;
+            text-align: center;
+        }
+    }
+}

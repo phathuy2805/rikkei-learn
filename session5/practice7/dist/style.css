@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background-color: #eef2f7;
+}
+
+.pricing-section {
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+.pricing-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  min-height: 500px;
+}
+
+.pricing-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 220px;
+  padding: 2rem 1.5rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+.pricing-card h3 {
+  font-size: 18px;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+.pricing-card .price {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.pricing-card ul {
+  width: 100%;
+  list-style: none;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+.pricing-card ul li {
+  margin-bottom: 0.4rem;
+}
+.pricing-card .btn {
+  width: 100%;
+  padding: 8px 24px;
+  text-align: center;
+  background-color: #2c3e50;
+  border-radius: 5px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+.pricing-card.highlight {
+  align-self: flex-start;
+  background-color: #1a8cff;
+}
+.pricing-card.highlight h3,
+.pricing-card.highlight .price,
+.pricing-card.highlight li {
+  color: #fff;
+}
+.pricing-card.highlight .btn {
+  background-color: #fff;
+  color: #1a8cff;
+}

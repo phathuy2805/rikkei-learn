@@ -1,0 +1,95 @@
+$font-main: 'Segoe UI', Tahoma, sans-serif;
+$color-highlight: #1a8cff;
+$color-heading: #2c3e50;
+$color-text: #666;
+$bg-color: #eef2f7;
+$card-bg: #fff;
+$card-radius: 8px;
+$card-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-main;
+    background-color: $bg-color;
+}
+
+.pricing-section {
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+.pricing-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    min-height: 500px;
+}
+
+.pricing-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 220px;
+    padding: 2rem 1.5rem;
+    background-color: $card-bg;
+    border-radius: $card-radius;
+    box-shadow: $card-shadow;
+
+    h3 {
+        font-size: 18px;
+        color: $color-heading;
+        margin-bottom: 0.5rem;
+    }
+
+    .price {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    ul {
+        width: 100%;
+        list-style: none;
+        font-size: 14px;
+        color: $color-text;
+        margin-bottom: 1.5rem;
+
+        li {
+            margin-bottom: 0.4rem;
+        }
+    }
+
+    .btn {
+        width: 100%;
+        padding: 8px 24px;
+        text-align: center;
+        background-color: $color-heading;
+        border-radius: 5px;
+        color: $card-bg;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+    &.highlight {
+        align-self: flex-start;
+        background-color: $color-highlight;
+
+        h3,
+        .price,
+        li {
+            color: $card-bg;
+        }
+
+        .btn {
+            background-color: $card-bg;
+            color: $color-highlight;
+        }
+    }
+}

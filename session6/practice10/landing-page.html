@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Bài 10 - Landing Page Bán Hàng Tích Hợp</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+    </head>
+
+    <body class="bg-light">
+        <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="#">Rikkei BookStore</a>
+                <!--                 
+                Button này là nút hamburger để toggle menu trên mobile khi
+                màn hình nhỏ lại
+                Khi click vào button này thì nó sẽ toggle
+                class "collapse" của div có id là "mainNav" để ẩn/hiện menu 
+                -->
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#mainNav"
+                    aria-controls="mainNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Trang chủ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sách Mới</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Khuyến Mãi</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <section class="container my-5">
+            <h2 class="text-center fw-bold mb-4">Sách Nổi Bật</h2>
+            <div class="row g-4">
+                <div class="col-12 col-md-6">
+                    <div class="card border-0 shadow-sm">
+                        <img
+                            src="https://images.unsplash.com/photo-1544947950-fa07a98d237f"
+                            class="card-img-top object-fit-cover"
+                            style="height: 500px"
+                            alt="Hành Trình Về Phương Đông"
+                        />
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">
+                                Hành Trình Về Phương Đông
+                            </h5>
+                            <p class="card-text text-muted">
+                                Một tác phẩm kinh điển khám phá những giá trị
+                                tâm linh và triết lý đặc sắc của người phương
+                                Đông qua góc nhìn của các học giả phương Tây.
+                            </p>
+                            <button
+                                class="btn btn-primary mt-auto"
+                                data-bs-toggle="modal"
+                                data-bs-target="#cartModal"
+                            >
+                                Mua ngay
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="card border-0 shadow-sm">
+                        <img
+                            src="https://images.unsplash.com/photo-1512820790803-83ca734da794"
+                            class="card-img-top object-fit-cover"
+                            style="height: 500px"
+                            alt="Đắc Nhân Tâm"
+                        />
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">Đắc Nhân Tâm</h5>
+                            <p class="card-text text-muted">
+                                Cuốn sách nổi tiếng nhất mọi thời đại về nghệ
+                                thuật giao tiếp, thu phục lòng người và xây dựng
+                                các mối quan hệ thành công.
+                            </p>
+                            <button
+                                class="btn btn-primary mt-auto"
+                                data-bs-toggle="modal"
+                                data-bs-target="#cartModal"
+                            >
+                                Mua ngay
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div
+            class="modal fade"
+            id="cartModal"
+            tabindex="-1"
+            aria-labelledby="cartModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header bg-success text-white">
+                        <h5 class="modal-title fw-bold" id="cartModalLabel">
+                            Thành công
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close btn-close-white"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body fs-5 mb-3">
+                        🎉 Đã thêm sản phẩm vào giỏ hàng thành công!
+                    </div>
+                    <div class="modal-footer align-self-center">
+                        <button
+                            type="button"
+                            class="btn btn-outline-secondary"
+                            data-bs-dismiss="modal"
+                        >
+                            Tiếp tục mua sắm
+                        </button>
+                        <button type="button" class="btn btn-success">
+                            Đến giỏ hàng
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

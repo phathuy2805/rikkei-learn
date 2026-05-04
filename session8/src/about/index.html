@@ -1,9 +1,415 @@
 <!doctype html>
-<html lang="en">
+<html lang="vi">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        />
+        <link href="../output.css" rel="stylesheet" />
+        <title>FitLife - Premium Fitness Club</title>
     </head>
-    <body></body>
+    <body class="bg-gym_primary min-h-screen flex flex-col">
+        <!-- Header -->
+
+        <header
+            class="sticky top-0 z-50 backdrop-blur-sm bg-header/80 border-b border-white/10"
+        >
+            <div
+                class="flex justify-between items-center max-w-6xl mx-auto p-4 text-white"
+            >
+                <!-- Logo -->
+                <a
+                    href="../index.html"
+                    class="flex justify-center items-baseline gap-2"
+                >
+                    <i class="fa-solid fa-dumbbell text-light_rose text-2xl">
+                    </i>
+                    <h1 class="flex gap-2">
+                        <span class="text-2xl font-bold">FIT</span>
+                        <span class="text-2xl font-bold text-light_rose"
+                            >LIFE</span
+                        >
+                    </h1>
+                </a>
+                <nav
+                    class="hidden md:flex gap-6 font-semibold text-slate-300 *:transition-colors *:duration-300"
+                >
+                    <a href="../index.html" class="hover:text-light_rose"
+                        >Trang chủ</a
+                    >
+                    <a
+                        href="../services/index.html"
+                        class="hover:text-light_rose"
+                        >Dịch vụ</a
+                    >
+                    <a
+                        href="../lessons/index.html"
+                        class="hover:text-light_rose"
+                        >Lớp học</a
+                    >
+                    <a
+                        href="./index.html"
+                        aria-current="page"
+                        class="hover:text-light_rose aria-[current=page]:text-white aria-[current=page]:font-bold"
+                        >Liên hệ</a
+                    >
+                </nav>
+                <a
+                    href="./index.html"
+                    class="bg-light_rose px-5 py-2 rounded font-bold hover:bg-rose transition-colors duration-300"
+                >
+                    Tham gia ngay
+                </a>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-1">
+            <section
+                class="flex justify-center items-center relative h-64 bg-cover bg-center bg-[url('./assets/images/hero_fitness.png')]"
+            >
+                <div class="absolute inset-0 bg-black/75"></div>
+                <div class="relative text-center text-white px-4">
+                    <p
+                        class="text-light_rose font-semibold uppercase tracking-widest mb-2"
+                    >
+                        Liên hệ
+                    </p>
+                    <h1 class="text-5xl font-bold uppercase">
+                        Bắt Đầu <span class="text-light_rose">Hành Trình</span>
+                    </h1>
+                </div>
+            </section>
+
+            <section class="w-full bg-header">
+                <div
+                    class="flex flex-col md:flex-row gap-16 max-w-6xl mx-auto px-8 py-20 text-gray-300"
+                >
+                    <div class="flex-1">
+                        <h2 class="text-3xl font-bold mb-3 text-white">
+                            Sẵn sàng thay đổi?
+                        </h2>
+                        <p class="text-gray-400 mb-8 leading-relaxed">
+                            Đăng ký thành viên ngay hôm nay để nhận ưu đãi giảm
+                            giá lên tới 30% cho tháng đầu tiên. Điền thông tin
+                            vào form bên cạnh để chuyên viên của chúng tôi liên
+                            hệ với bạn.
+                        </p>
+
+                        <div class="flex flex-col gap-4 mb-8">
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-rose/20 flex items-center justify-center shrink-0"
+                                >
+                                    <i
+                                        class="fa-solid fa-location-dot text-rose"
+                                    ></i>
+                                </div>
+                                <p>Số 123, Đường ABC, Quận XYZ, Hà Nội</p>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-rose/20 flex items-center justify-center shrink-0"
+                                >
+                                    <i class="fa-solid fa-phone text-rose"></i>
+                                </div>
+                                <p>0123.456.789</p>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-rose/20 flex items-center justify-center shrink-0"
+                                >
+                                    <i
+                                        class="fa-solid fa-envelope text-rose"
+                                    ></i>
+                                </div>
+                                <p>info@fitlife.com</p>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-rose/20 flex items-center justify-center shrink-0"
+                                >
+                                    <i
+                                        class="fa-regular fa-clock text-rose"
+                                    ></i>
+                                </div>
+                                <p>Mở cửa 24/7 – Kể cả lễ, tết</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3">
+                            <a
+                                href="#"
+                                class="w-10 h-10 rounded-full bg-gym_primary flex items-center justify-center hover:bg-rose transition-colors duration-300"
+                            >
+                                <i
+                                    class="fa-brands fa-facebook-f text-white"
+                                ></i>
+                            </a>
+                            <a
+                                href="#"
+                                class="w-10 h-10 rounded-full bg-gym_primary flex items-center justify-center hover:bg-rose transition-colors duration-300"
+                            >
+                                <i
+                                    class="fa-brands fa-instagram text-white"
+                                ></i>
+                            </a>
+                            <a
+                                href="#"
+                                class="w-10 h-10 rounded-full bg-gym_primary flex items-center justify-center hover:bg-rose transition-colors duration-300"
+                            >
+                                <i class="fa-brands fa-tiktok text-white"></i>
+                            </a>
+                            <a
+                                href="#"
+                                class="w-10 h-10 rounded-full bg-gym_primary flex items-center justify-center hover:bg-rose transition-colors duration-300"
+                            >
+                                <i class="fa-brands fa-youtube text-white"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="w-full max-w-105 shrink-0">
+                        <form
+                            action="#"
+                            class="bg-gym_primary p-8 rounded-lg"
+                            method="post"
+                        >
+                            <h2 class="text-2xl font-bold mb-6 text-white">
+                                Đăng Ký Tư Vấn
+                            </h2>
+                            <label
+                                for="fullname"
+                                class="block mb-1.5 text-sm font-medium text-gray-400"
+                                >Họ và tên *</label
+                            >
+                            <input
+                                required
+                                id="fullname"
+                                type="text"
+                                placeholder="Nhập họ và tên của bạn"
+                                class="w-full mb-4 px-3 py-2.5 rounded bg-slate-800 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-light_rose"
+                            />
+                            <label
+                                for="email"
+                                class="block mb-1.5 text-sm font-medium text-gray-400"
+                                >Email *</label
+                            >
+                            <input
+                                id="email"
+                                required
+                                type="email"
+                                placeholder="Ví dụ: example@email.com"
+                                class="w-full mb-4 px-3 py-2.5 rounded bg-slate-800 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-light_rose"
+                            />
+                            <label
+                                for="phonenumber"
+                                class="block mb-1.5 text-sm font-medium text-gray-400"
+                                >Số điện thoại *</label
+                            >
+                            <input
+                                id="phonenumber"
+                                required
+                                type="tel"
+                                placeholder="Ví dụ: 0987654321"
+                                class="w-full mb-4 px-3 py-2.5 rounded bg-slate-800 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-light_rose"
+                            />
+                            <label
+                                for="aim"
+                                class="block mb-1.5 text-sm font-medium text-gray-400"
+                                >Mục tiêu tập luyện *</label
+                            >
+                            <select
+                                required
+                                id="aim"
+                                class="w-full mb-4 px-3 py-2.5 rounded bg-slate-800 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-light_rose"
+                            >
+                                <option value="" disabled selected>
+                                    Chọn mục tiêu tập luyện của bạn
+                                </option>
+                                <option value="weight_loss">
+                                    Giảm cân / Giảm mỡ
+                                </option>
+                                <option value="muscle_gain">
+                                    Tăng cơ / Tăng cân
+                                </option>
+                                <option value="general_fitness">
+                                    Cải thiện sức khỏe chung
+                                </option>
+                                <option value="yoga_flexibility">
+                                    Học Yoga / Dẻo dai
+                                </option>
+                            </select>
+                            <label
+                                for="message"
+                                class="block mb-1.5 text-sm font-medium text-gray-400"
+                                >Lời nhắn</label
+                            >
+                            <textarea
+                                id="message"
+                                rows="3"
+                                placeholder="Nhập nội dung bạn muốn tư vấn..."
+                                class="w-full mb-4 px-3 py-2.5 rounded bg-slate-800 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-light_rose resize-none"
+                            ></textarea>
+                            <div class="flex items-start gap-2 mb-6">
+                                <input
+                                    type="checkbox"
+                                    name="agree"
+                                    required
+                                    id="agree"
+                                    class="mt-0.5 accent-light_rose cursor-pointer"
+                                />
+                                <label
+                                    for="agree"
+                                    class="text-sm text-gray-400 cursor-pointer"
+                                >
+                                    Tôi đồng ý nhận thông tin tư vấn qua điện
+                                    thoại và email quy định.
+                                </label>
+                            </div>
+                            <button
+                                type="submit"
+                                class="w-full bg-light_rose py-3 rounded font-bold text-white hover:bg-rose transition-colors duration-300"
+                            >
+                                Đăng ký ngay
+                                <i class="fa-solid fa-arrow-right ml-2"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <section class="w-full">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3921.649572021165!2d106.58582297644858!3d10.606547162301368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175350046c900d7%3A0xd43a28e06eccc83c!2sGym%20T%26V%20Fitness%20Long%20An!5e0!3m2!1svi!2s!4v1777818986759!5m2!1svi!2s"
+                    width="100%"
+                    height="450"
+                    style="border: 0"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-black text-gray-400">
+            <div
+                class="max-w-6xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between gap-12"
+            >
+                <div class="flex flex-col gap-3">
+                    <a href="../index.html" class="flex items-baseline gap-2">
+                        <i
+                            class="fa-solid fa-dumbbell text-light_rose text-xl"
+                        ></i>
+                        <span class="text-white text-xl font-bold"
+                            >FIT<span class="text-light_rose">LIFE</span></span
+                        >
+                    </a>
+                    <p class="text-sm max-w-56 leading-relaxed">
+                        Premium Fitness Club – Nơi giới hạn của bạn bị phá vỡ
+                        mỗi ngày.
+                    </p>
+                </div>
+                <div>
+                    <p class="text-white font-semibold mb-4">Điều hướng</p>
+                    <ul class="flex flex-col gap-2 text-sm">
+                        <li>
+                            <a
+                                href="../index.html"
+                                class="hover:text-light_rose transition-colors duration-300"
+                                >Trang chủ</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="./index.html"
+                                class="hover:text-light_rose transition-colors duration-300"
+                                >Dịch vụ</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="../lessons/index.html"
+                                class="hover:text-light_rose transition-colors duration-300"
+                                >Lớp học</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="../about/index.html"
+                                class="hover:text-light_rose transition-colors duration-300"
+                                >Liên hệ</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="text-white font-semibold mb-4">Liên hệ</p>
+                    <ul class="flex flex-col gap-2 text-sm">
+                        <li>
+                            <i
+                                class="fa-solid fa-location-dot text-rose mr-2"
+                            ></i
+                            >Số 123, Đường ABC, Hà Nội
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone text-rose mr-2"></i
+                            >0123.456.789
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-envelope text-rose mr-2"></i
+                            >info@fitlife.com
+                        </li>
+                        <li>
+                            <i class="fa-regular fa-clock text-rose mr-2"></i>Mở
+                            cửa 24/7
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="text-white font-semibold mb-4">
+                        Theo dõi chúng tôi
+                    </p>
+                    <div class="flex gap-3">
+                        <a
+                            href="#"
+                            class="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center hover:bg-rose transition-colors duration-300"
+                            ><i
+                                class="fa-brands fa-facebook-f text-white text-sm"
+                            ></i
+                        ></a>
+                        <a
+                            href="#"
+                            class="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center hover:bg-rose transition-colors duration-300"
+                            ><i
+                                class="fa-brands fa-instagram text-white text-sm"
+                            ></i
+                        ></a>
+                        <a
+                            href="#"
+                            class="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center hover:bg-rose transition-colors duration-300"
+                            ><i
+                                class="fa-brands fa-tiktok text-white text-sm"
+                            ></i
+                        ></a>
+                        <a
+                            href="#"
+                            class="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center hover:bg-rose transition-colors duration-300"
+                            ><i
+                                class="fa-brands fa-youtube text-white text-sm"
+                            ></i
+                        ></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 py-4">
+                <p class="text-center text-gray-600 text-sm">
+                    &copy; 2026 Rikkei Education. Fullstack JavaScript.
+                </p>
+            </div>
+        </footer>
+    </body>
 </html>

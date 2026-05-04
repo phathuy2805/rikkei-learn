@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        />
+        <link href="../output.css" rel="stylesheet" />
+        <title>FitLife - Premium Fitness Club</title>
+    </head>
+    <body class="bg-gym_primary min-h-screen flex flex-col">
+        <!-- Header -->
+
+        <header
+            class="sticky top-0 z-50 backdrop-blur-sm bg-header/80 border-b border-white/10"
+        >
+            <div
+                class="flex justify-between items-center max-w-6xl mx-auto p-4 text-white"
+            >
+                <!-- Logo -->
+                <a
+                    href="../index.html"
+                    class="flex justify-center items-baseline gap-2"
+                >
+                    <i class="fa-solid fa-dumbbell text-light_rose text-2xl">
+                    </i>
+                    <h1 class="flex gap-2">
+                        <span class="text-2xl font-bold">FIT</span>
+                        <span class="text-2xl font-bold text-light_rose"
+                            >LIFE</span
+                        >
+                    </h1>
+                </a>
+                <nav
+                    class="hidden md:flex gap-6 font-semibold text-slate-300 *:transition-colors *:duration-300"
+                >
+                    <a href="../index.html" class="hover:text-light_rose"
+                        >Trang chủ</a
+                    >
+                    <a
+                        href="../services/index.html"
+                        class="hover:text-light_rose"
+                        >Dịch vụ</a
+                    >
+                    <a
+                        href="./index.html"
+                        aria-current="page"
+                        class="hover:text-light_rose aria-[current=page]:text-white aria-[current=page]:font-bold"
+                        >Lớp học</a
+                    >
+                    <a href="../about/index.html" class="hover:text-light_rose"
+                        >Liên hệ</a
+                    >
+                </nav>
+                <a
+                    href="./about/index.html"
+                    class="bg-light_rose px-5 py-2 rounded font-bold hover:bg-rose transition-colors duration-300"
+                >
+                    Tham gia ngay
+                </a>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <section class="w-full flex flex-col items-center py-17.5">
+                <h2
+                    class="text-white font-bold text-3xl uppercase relative after:content-[''] after:absolute after:w-16 after:h-1 after:bg-light_rose after:left-1/2 after:-translate-x-1/2 after:-bottom-2.5 mb-10"
+                >
+                    Lớp học tiêu biểu
+                </h2>
+                <div
+                    class="flex flex-col md:flex-row md:justify-between w-full max-w-6xl gap-8 p-4"
+                >
+                    <div
+                        class="flex flex-col md:flex-row rounded-md overflow-hidden"
+                    >
+                        <img
+                            class="w-full h-56 md:w-56 md:h-full object-cover"
+                            src="../assets/images/weight_lifting.png"
+                            alt="Gym Image 1"
+                        />
+                        <div class="bg-header px-6 py-8">
+                            <p class="uppercase text-sm text-rose font-bold">
+                                Tăng cơ - Giảm mỡ
+                            </p>
+                            <h3
+                                class="text-2xl capitalize text-white font-bold mb-2"
+                            >
+                                Thể Hình Sức Mạnh
+                            </h3>
+                            <p class="text-deep_gray text-sm my-3">
+                                Cải thiện sức mạnh cơ bắp với tạ tự do và máy
+                                móc chuyên dụng.
+                            </p>
+                            <a
+                                href="#"
+                                class="text-white font-bold text-base hover:text-rose transition-colors duration-300"
+                            >
+                                Xem chi tiết
+                                <i class="fa-solid fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-col md:flex-row rounded-md overflow-hidden"
+                    >
+                        <img
+                            class="w-full h-56 md:w-56 md:h-full object-cover"
+                            src="../assets/images/yoga_class.png"
+                            alt="Gym Image 2"
+                        />
+                        <div class="bg-header px-6 py-8">
+                            <p class="uppercase text-sm text-rose font-bold">
+                                Thư giãn - Dẻo dai
+                            </p>
+                            <h3
+                                class="text-2xl capitalize text-white font-bold mb-2"
+                            >
+                                Yoga Thiền Định
+                            </h3>
+                            <p class="text-deep_gray text-sm my-3">
+                                Cân bằng tâm trí, tăng cường sự dẻo dai với
+                                không gian yên tĩnh.
+                            </p>
+                            <a
+                                href="#"
+                                class="text-white font-bold text-base hover:text-rose transition-colors duration-300"
+                            >
+                                Xem chi tiết
+                                <i class="fa-solid fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="w-full flex flex-col items-center py-19 bg-header">
+                <div class="mx-4">
+                    <h2
+                        class="text-white font-bold text-3xl uppercase relative after:content-[''] after:absolute after:w-16 after:h-1 after:bg-light_rose after:left-1/2 after:-translate-x-1/2 after:-bottom-2.5 mb-16"
+                    >
+                        Lịch học tuần này
+                    </h2>
+                    <div
+                        class="w-full max-w-6xl mx-auto rounded-lg border border-slate-600 overflow-x-auto"
+                    >
+                        <table class="table-auto w-full text-left text-white">
+                            <thead
+                                class="bg-gym_primary border-b border-slate-500"
+                            >
+                                <tr
+                                    class="text-[10px] md:text-sm uppercase tracking-wider"
+                                >
+                                    <th
+                                        scope="col"
+                                        class="px-3 py-3 md:px-6 md:py-4 font-medium"
+                                    >
+                                        Thời gian
+                                    </th>
+                                    <th
+                                        scope="col"
+                                        class="px-3 py-3 md:px-6 md:py-4 font-medium"
+                                    >
+                                        Thứ Hai
+                                    </th>
+                                    <th
+                                        scope="col"
+                                        class="px-3 py-3 md:px-6 md:py-4 font-medium"
+                                    >
+                                        Thứ Tư
+                                    </th>
+                                    <th
+                                        scope="col"
+                                        class="px-3 py-3 md:px-6 md:py-4 font-medium"
+                                    >
+                                        Thứ Sáu
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-700 text-base">
+                                <tr class="text-xs md:text-sm">
+                                    <td
+                                        class="px-3 py-3 md:px-6 md:py-4 font-medium whitespace-nowrap text-rose"
+                                    >
+                                        06:00 - 07:30
+                                    </td>
+                                    <td class="px-3 py-3 md:px-6 md:py-4">
+                                        <div>Yoga Thiền Định</div>
+                                        <div
+                                            class="text-[10px] md:text-sm text-gray-500"
+                                        >
+                                            PT. Elena
+                                        </div>
+                                    </td>
+                                    <td class="px-3 py-3 md:px-6 md:py-4">
+                                        <div>Cardio Đốt Mỡ</div>
+                                        <div
+                                            class="text-[10px] md:text-sm text-gray-500"
+                                        >
+                                            PT. David
+                                        </div>
+                                    </td>
+                                    <td class="px-3 py-3 md:px-6 md:py-4">
+                                        <div>Thể Hình Sức Mạnh</div>
+                                        <div
+                                            class="text-[10px] md:text-sm text-gray-500"
+                                        >
+                                            PT. Marcus
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="text-xs md:text-sm">
+                                    <td
+                                        class="px-3 py-3 md:px-6 md:py-4 font-medium whitespace-nowrap text-rose"
+                                    >
+                                        17:00 - 18:30
+                                    </td>
+                                    <td class="px-3 py-3 md:px-6 md:py-4">
+                                        Thể Hình Sức Mạnh
+                                    </td>
+                                    <td class="px-3 py-3 md:px-6 md:py-4">
+                                        Zumba Dance
+                                    </td>
+                                    <td class="px-3 py-3 md:px-6 md:py-4">
+                                        Boxing Cơ Bản
+                                    </td>
+                                </tr>
+                                <tr class="text-xs md:text-sm">
+                                    <td
+                                        class="px-3 py-3 md:px-6 md:py-4 font-medium whitespace-nowrap text-rose"
+                                    >
+                                        19:00 - 20:30
+                                    </td>
+                                    <td class="px-3 py-3 md:px-6 md:py-4">
+                                        CrossFit
+                                    </td>
+                                    <td class="px-3 py-3 md:px-6 md:py-4">
+                                        Yoga Thư Giãn
+                                    </td>
+                                    <td class="px-3 py-3 md:px-6 md:py-4">
+                                        Cardio Nâng Cao
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Trainer Section -->
+            <section class="w-full flex flex-col items-center py-17.5">
+                <h2
+                    class="text-white text-center font-bold text-3xl uppercase relative after:content-[''] after:absolute after:w-16 after:h-1 after:bg-light_rose after:left-1/2 after:-translate-x-1/2 after:-bottom-2.5 mb-14"
+                >
+                    Đội Ngũ Huấn Luyện Viên
+                </h2>
+                <div
+                    class="flex flex-col md:flex-row gap-7 max-w-6xl w-full px-4"
+                >
+                    <!-- Trainer 1 -->
+                    <div
+                        class="flex-1 bg-header rounded-lg overflow-hidden group border border-transparent hover:border-rose transition-colors duration-300"
+                    >
+                        <div class="relative h-64 overflow-hidden">
+                            <img
+                                src="https://randomuser.me/api/portraits/men/32.jpg"
+                                alt="PT Marcus"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            />
+                            <div
+                                class="absolute inset-0 bg-linear-to-t from-header to-transparent"
+                            ></div>
+                        </div>
+                        <div class="p-5">
+                            <p
+                                class="text-xs text-rose font-semibold uppercase tracking-widest mb-1"
+                            >
+                                Thể hình · Sức mạnh
+                            </p>
+                            <h3 class="text-white font-bold text-xl mb-1">
+                                PT. Marcus
+                            </h3>
+                            <p class="text-deep_gray text-sm mb-4">
+                                Chứng chỉ NASM-CPT. 8 năm kinh nghiệm huấn luyện
+                                thể hình và powerlifting chuyên nghiệp.
+                            </p>
+                            <div class="flex gap-2">
+                                <a
+                                    href="#"
+                                    class="w-8 h-8 rounded-full bg-gym_primary flex items-center justify-center hover:bg-rose transition-colors duration-300"
+                                    ><i
+                                        class="fa-brands fa-instagram text-white text-xs"
+                                    ></i
+                                ></a>
+                                <a
+                                    href="#"
+                                    class="w-8 h-8 rounded-full bg-gym_primary flex items-center justify-center hover:bg-rose transition-colors duration-300"
+                                    ><i
+                                        class="fa-brands fa-facebook-f text-white text-xs"
+                                    ></i
+                                ></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Trainer 2 -->
+                    <div
+                        class="flex-1 bg-header rounded-lg overflow-hidden group border border-transparent hover:border-rose transition-colors duration-300"
+                    >
+                        <div class="relative h-64 overflow-hidden">
+                            <img
+                                src="https://randomuser.me/api/portraits/women/44.jpg"
+                                alt="PT Elena"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            />
+                            <div
+                                class="absolute inset-0 bg-linear-to-t from-header to-transparent"
+                            ></div>
+                        </div>
+                        <div class="p-5">
+                            <p
+                                class="text-xs text-rose font-semibold uppercase tracking-widest mb-1"
+                            >
+                                Yoga · Thiền định
+                            </p>
+                            <h3 class="text-white font-bold text-xl mb-1">
+                                PT. Elena
+                            </h3>
+                            <p class="text-deep_gray text-sm mb-4">
+                                Chứng chỉ RYT-500. 6 năm giảng dạy Yoga trị
+                                liệu, chuyên sâu về phục hồi chấn thương.
+                            </p>
+                            <div class="flex gap-2">
+                                <a
+                                    href="#"
+                                    class="w-8 h-8 rounded-full bg-gym_primary flex items-center justify-center hover:bg-rose transition-colors duration-300"
+                                    ><i
+                                        class="fa-brands fa-instagram text-white text-xs"
+                                    ></i
+                                ></a>
+                                <a
+                                    href="#"
+                                    class="w-8 h-8 rounded-full bg-gym_primary flex items-center justify-center hover:bg-rose transition-colors duration-300"
+                                    ><i
+                                        class="fa-brands fa-facebook-f text-white text-xs"
+                                    ></i
+                                ></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Trainer 3 -->
+                    <div
+                        class="flex-1 bg-header rounded-lg overflow-hidden group border border-transparent hover:border-rose transition-colors duration-300"
+                    >
+                        <div class="relative h-64 overflow-hidden">
+                            <img
+                                src="https://randomuser.me/api/portraits/men/65.jpg"
+                                alt="PT David"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            />
+                            <div
+                                class="absolute inset-0 bg-linear-to-t from-header to-transparent"
+                            ></div>
+                        </div>
+                        <div class="p-5">
+                            <p
+                                class="text-xs text-rose font-semibold uppercase tracking-widest mb-1"
+                            >
+                                Cardio · HIIT
+                            </p>
+                            <h3 class="text-white font-bold text-xl mb-1">
+                                PT. David
+                            </h3>
+                            <p class="text-deep_gray text-sm mb-4">
+                                Chứng chỉ ACE-CPT. 5 năm huấn luyện cardio và
+                                giảm cân, từng là VĐV marathon quốc gia.
+                            </p>
+                            <div class="flex gap-2">
+                                <a
+                                    href="#"
+                                    class="w-8 h-8 rounded-full bg-gym_primary flex items-center justify-center hover:bg-rose transition-colors duration-300"
+                                    ><i
+                                        class="fa-brands fa-instagram text-white text-xs"
+                                    ></i
+                                ></a>
+                                <a
+                                    href="#"
+                                    class="w-8 h-8 rounded-full bg-gym_primary flex items-center justify-center hover:bg-rose transition-colors duration-300"
+                                    ><i
+                                        class="fa-brands fa-facebook-f text-white text-xs"
+                                    ></i
+                                ></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-black text-gray-400">
+            <div
+                class="max-w-6xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between gap-12"
+            >
+                <div class="flex flex-col gap-3">
+                    flex flex-col md:flex-row justify-between gap-12
+                    <a href="../index.html" class="flex items-baseline gap-2">
+                        <i
+                            class="fa-solid fa-dumbbell text-light_rose text-xl"
+                        ></i>
+                        <span class="text-white text-xl font-bold"
+                            >FIT<span class="text-light_rose">LIFE</span></span
+                        >
+                    </a>
+                    <p class="text-sm max-w-56 leading-relaxed">
+                        Premium Fitness Club – Nơi giới hạn của bạn bị phá vỡ
+                        mỗi ngày.
+                    </p>
+                </div>
+                <div>
+                    <p class="text-white font-semibold mb-4">Điều hướng</p>
+                    <ul class="flex flex-col gap-2 text-sm">
+                        <li>
+                            <a
+                                href="../index.html"
+                                class="hover:text-light_rose transition-colors duration-300"
+                                >Trang chủ</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="./index.html"
+                                class="hover:text-light_rose transition-colors duration-300"
+                                >Dịch vụ</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="../lessons/index.html"
+                                class="hover:text-light_rose transition-colors duration-300"
+                                >Lớp học</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="../about/index.html"
+                                class="hover:text-light_rose transition-colors duration-300"
+                                >Liên hệ</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="text-white font-semibold mb-4">Liên hệ</p>
+                    <ul class="flex flex-col gap-2 text-sm">
+                        <li>
+                            <i
+                                class="fa-solid fa-location-dot text-rose mr-2"
+                            ></i
+                            >Số 123, Đường ABC, Hà Nội
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone text-rose mr-2"></i
+                            >0123.456.789
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-envelope text-rose mr-2"></i
+                            >info@fitlife.com
+                        </li>
+                        <li>
+                            <i class="fa-regular fa-clock text-rose mr-2"></i>Mở
+                            cửa 24/7
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="text-white font-semibold mb-4">
+                        Theo dõi chúng tôi
+                    </p>
+                    <div class="flex gap-3">
+                        <a
+                            href="#"
+                            class="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center hover:bg-rose transition-colors duration-300"
+                            ><i
+                                class="fa-brands fa-facebook-f text-white text-sm"
+                            ></i
+                        ></a>
+                        <a
+                            href="#"
+                            class="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center hover:bg-rose transition-colors duration-300"
+                            ><i
+                                class="fa-brands fa-instagram text-white text-sm"
+                            ></i
+                        ></a>
+                        <a
+                            href="#"
+                            class="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center hover:bg-rose transition-colors duration-300"
+                            ><i
+                                class="fa-brands fa-tiktok text-white text-sm"
+                            ></i
+                        ></a>
+                        <a
+                            href="#"
+                            class="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center hover:bg-rose transition-colors duration-300"
+                            ><i
+                                class="fa-brands fa-youtube text-white text-sm"
+                            ></i
+                        ></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 py-4">
+                <p class="text-center text-gray-600 text-sm">
+                    &copy; 2026 Rikkei Education. Fullstack JavaScript.
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>

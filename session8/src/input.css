@@ -1,3 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+    --color-header: #1f2937;
+    --color-gym_primary: #111827;
+    --color-rose: #e11d48;
+    --color-light_rose: #f43f5e;
+    --color-deep_gray: #9ca3af;
+}
+@custom-variant hover (&:hover);

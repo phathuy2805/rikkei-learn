@@ -10,92 +10,128 @@
         <link href="./output.css" rel="stylesheet" />
         <title>FitLife - Premium Fitness Club</title>
     </head>
-    <body class="bg-gym_primary">
-        <header class="sticky top-0 z-50">
+    <body class="bg-gym_primary min-h-screen flex flex-col">
+        <!-- Header -->
+        <header
+            class="sticky top-0 z-50 backdrop-blur-sm bg-header/80 border-b border-white/10"
+        >
             <div
-                class="flex justify-between items-center px-5 py-4 bg-header text-white"
+                class="flex justify-between items-center max-w-6xl mx-auto p-4 text-white"
             >
-                <div
-                    class="flex justify-center items-baseline gap-2 cursor-pointer"
+                <!-- Logo -->
+                <a
+                    href="index.html"
+                    class="flex justify-center items-baseline gap-2"
                 >
-                    <i
-                        class="fa-solid fa-dumbbell text-light_rose text-2xl"
-                    ></i>
+                    <i class="fa-solid fa-dumbbell text-light_rose text-2xl">
+                    </i>
                     <h1 class="flex gap-2">
                         <span class="text-2xl font-bold">FIT</span>
                         <span class="text-2xl font-bold text-light_rose"
                             >LIFE</span
                         >
                     </h1>
-                </div>
-                <nav class="flex gap-5 font-semibold text-slate-300">
+                </a>
+                <nav
+                    class="hidden md:flex gap-6 font-semibold text-slate-300 *:transition-colors *:duration-300"
+                >
                     <a
                         href="index.html"
-                        class="text-white hover:text-light_rose transition-colors duration-300"
+                        aria-current="page"
+                        class="hover:text-light_rose aria-[current=page]:text-white aria-[current=page]:font-bold"
                         >Trang chủ</a
                     >
                     <a
-                        href="/services"
-                        class="hover:text-light_rose transition-colors duration-300"
+                        href="./services/index.html"
+                        class="hover:text-light_rose"
                         >Dịch vụ</a
                     >
-                    <a
-                        href="/class"
-                        class="hover:text-light_rose transition-colors duration-300"
+                    <a href="./lessons/index.html" class="hover:text-light_rose"
                         >Lớp học</a
                     >
-                    <a
-                        href="/about"
-                        class="hover:text-light_rose transition-colors duration-300"
+                    <a href="./about/index.html" class="hover:text-light_rose"
                         >Liên hệ</a
                     >
                 </nav>
-                <button
+                <a
+                    href="./about/index.html"
                     class="bg-light_rose px-5 py-2 rounded font-bold hover:bg-rose transition-colors duration-300"
                 >
                     Tham gia ngay
-                </button>
+                </a>
             </div>
         </header>
+
+        <!-- Main Content -->
         <main>
+            <!-- Hero Section -->
             <section
-                class="flex justify-center items-center relative h-[610px] bg-cover bg-center bg-[url('https://sangle2000.github.io/FitLife-Premium-Fitness-Club/assets/images/hero_fitness_1773061859337.png')]"
+                class="flex justify-center items-center relative h-152.5 bg-cover bg-center bg-[url('./assets/images/hero_fitness.png')]"
             >
-                <div class="absolute inset-0 bg-black/60"></div>
+                <!-- Overlay -->
+                <div class="absolute inset-0 bg-black/70"></div>
                 <div
-                    class="w-[770px] p-2 flex flex-col justify-center items-center text-center text-white relative"
+                    class="max-w-3xl flex flex-col justify-center items-center text-center text-white relative"
                 >
-                    <h1 class="text-6xl font-bold mb-5 text-white">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-5">
                         PHÁ VỠ <span class="text-light_rose">GIỚI HẠN</span> BẢN
                         THÂN
                     </h1>
-                    <p class="text-xl text-gray-300 mb-8">
+                    <p class="text-base md:text-xl text-gray-300 mb-8 mx-4">
                         Cơ sở vật chất hiện đại, huấn luyện viên chuyên nghiệp.
                         Bắt đầu hành trình thay đổi vóc dáng của bạn ngay hôm
                         nay!
                     </p>
-                    <button
-                        class="bg-light_rose px-8 py-3 rounded font-bold text-white text-[18px] hover:bg-rose transition-colors duration-300"
+                    <a
+                        href="./about/index.html"
+                        class="bg-light_rose px-8 py-3 rounded font-bold text-white text-base md:text-xl cursor-pointer hover:bg-rose transition-colors duration-300"
                     >
                         Đăng ký tập thử MIỄN PHÍ
-                    </button>
+                    </a>
+                    <!-- Statistics -->
+                    <div class="flex gap-8 mt-10 text-center">
+                        <div>
+                            <p class="text-2xl font-bold">500+</p>
+                            <p class="text-sm text-gray-400">Thành viên</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold">15+</p>
+                            <p class="text-sm text-gray-400">
+                                PT Chuyên nghiệp
+                            </p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold">24/7</p>
+                            <p class="text-sm text-gray-400">Mở cửa</p>
+                        </div>
+                    </div>
                 </div>
             </section>
 
-            <section class="w-full flex flex-col items-center py-[70px]">
+            <section
+                class="md:max-w-6xl mx-auto my-24 flex flex-col items-center"
+            >
                 <h2
-                    class="text-white font-bold text-3xl uppercase relative after:content-[''] after:absolute after:w-16 after:h-1 after:bg-light_rose after:left-1/2 after:-translate-x-1/2 after:bottom-[-10px] mb-10"
+                    class="text-white font-bold text-center text-3xl uppercase relative after:content-[''] after:absolute after:w-16 after:h-1 after:bg-light_rose after:left-1/2 after:-translate-x-1/2 after:-bottom-2.5 mb-10"
                 >
                     Tại sao chọn chúng tôi?
                 </h2>
-                <div class="flex justify-between w-full max-w-5xl gap-8 p-4">
+                <div
+                    class="flex flex-col md:flex-row md:justify-between w-full gap-8 p-4"
+                >
                     <div
-                        class="bg-gray-800 flex flex-col items-center flex-grow-0 p-8 rounded-lg"
+                        class="bg-gray-800 flex flex-col items-center p-8 rounded-lg border border-transparent group hover:border-rose transition-colors duration-300"
                     >
-                        <i
-                            class="fa-solid fa-dumbbell text-light_rose text-4xl mb-4"
-                        ></i>
-                        <p class="text-white font-bold text-xl mb-3">
+                        <div
+                            class="w-16 h-16 bg-gym_primary rounded-full flex items-center justify-center mx-auto mb-5"
+                        >
+                            <i
+                                class="fa-solid fa-dumbbell text-light_rose text-2xl"
+                            ></i>
+                        </div>
+                        <p
+                            class="text-white font-bold text-xl mb-3 group-hover:text-rose transition-colors duration-300"
+                        >
                             Thiết bị hiện đại
                         </p>
                         <p class="text-deep_gray text-center">
@@ -104,12 +140,18 @@
                         </p>
                     </div>
                     <div
-                        class="bg-gray-800 flex flex-col items-center flex-grow-0 p-8 rounded-lg"
+                        class="bg-gray-800 flex flex-col items-center p-8 rounded-lg border group border-transparent hover:border-rose transition-colors duration-300"
                     >
-                        <i
-                            class="fa-solid fa-user-ninja text-light_rose text-4xl mb-4"
-                        ></i>
-                        <p class="text-white font-bold text-xl mb-3">
+                        <div
+                            class="w-16 h-16 bg-gym_primary rounded-full flex items-center justify-center mx-auto mb-5"
+                        >
+                            <i
+                                class="fa-solid fa-user-ninja text-light_rose text-2xl"
+                            ></i>
+                        </div>
+                        <p
+                            class="text-white font-bold text-xl mb-3 group-hover:text-rose transition-colors duration-300"
+                        >
                             PT Chuyên nghiệp
                         </p>
                         <p class="text-deep_gray text-center">
@@ -118,12 +160,18 @@
                         </p>
                     </div>
                     <div
-                        class="bg-gray-800 flex flex-col items-center flex-grow-0 p-8 rounded-lg"
+                        class="bg-gray-800 flex flex-col items-center p-8 rounded-lg border group border-transparent hover:border-rose transition-colors duration-300"
                     >
-                        <i
-                            class="fa-regular fa-clock text-light_rose text-4xl mb-4"
-                        ></i>
-                        <p class="text-white font-bold text-xl mb-3">
+                        <div
+                            class="w-16 h-16 bg-gym_primary rounded-full flex items-center justify-center mx-auto mb-5"
+                        >
+                            <i
+                                class="fa-regular fa-clock text-light_rose text-2xl"
+                            ></i>
+                        </div>
+                        <p
+                            class="text-white font-bold text-xl mb-3 group-hover:text-rose transition-colors duration-300"
+                        >
                             Mở cửa 24/7
                         </p>
                         <p class="text-deep_gray text-center">
@@ -134,17 +182,17 @@
                 </div>
             </section>
 
-            <section
-                class="w-full flex flex-col items-center py-[76px] bg-header"
-            >
+            <section class="flex flex-col items-center py-19 bg-header">
                 <h2
-                    class="text-white font-bold text-3xl uppercase relative after:content-[''] after:absolute after:w-16 after:h-1 after:bg-light_rose after:left-1/2 after:-translate-x-1/2 after:bottom-[-10px] mb-16"
+                    class="text-white font-bold text-3xl uppercase relative after:content-[''] after:absolute after:w-16 after:h-1 after:bg-light_rose after:left-1/2 after:-translate-x-1/2 after:-bottom-2.5 mb-10"
                 >
                     Khóa học nổi bật
                 </h2>
-                <div class="flex justify-around gap-7 mx-5">
+                <div
+                    class="flex flex-col md:flex-row md:justify-around gap-7 max-w-6xl mx-auto px-4"
+                >
                     <article
-                        class="h-150 w-1/3 rounded-lg bg-gym_primary group border border-transparent hover:border-rose transition-all duration-300"
+                        class="w-full md:w-1/3 flex flex-col rounded-lg bg-gym_primary group border border-transparent hover:border-rose transition-colors duration-300"
                     >
                         <div
                             class="relative w-full h-48 overflow-hidden rounded-lg"
@@ -155,12 +203,12 @@
                                 -20% Discount
                             </div>
                             <img
-                                class="w-full h-full object-cover group-hover:scale-110 transition-all duration-300"
-                                src="https://sangle2000.github.io/FitLife-Premium-Fitness-Club/assets/images/weight_lifting_1773061899821.png"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                                src="./assets/images/weight_lifting.png"
                                 alt="Gym Image 1"
                             />
                             <div
-                                class="absolute inset-0 bg-gradient-to-b from-transparent to-gym_primary/70"
+                                class="absolute inset-0 bg-linear-to-b from-transparent to-gym_primary/70"
                             ></div>
                         </div>
                         <div class="p-6">
@@ -176,9 +224,11 @@
                             </p>
                         </div>
 
-                        <hr class="mx-5 border-[0.5px] border-gray-800" />
+                        <hr
+                            class="mx-5 border-[0.5px] border-gray-800 mt-auto"
+                        />
                         <div
-                            class="flex justify-between items-center px-5 py-4"
+                            class="flex justify-between items-center px-5 py-4 mb-4"
                         >
                             <div
                                 class="py-1 px-2 bg-header text-sm rounded-sm font-semibold text-white"
@@ -187,7 +237,7 @@
                             </div>
                             <a
                                 class="text-rose font-semibold text-sm group-hover:underline transition-colors duration-300"
-                                href="#"
+                                href="./about/index.html"
                             >
                                 Tư vấn ngay
                                 <i class="fa-solid fa-arrow-right ml-1"></i>
@@ -195,7 +245,7 @@
                         </div>
                     </article>
                     <article
-                        class="h-150 w-1/3 rounded-lg bg-gym_primary group border border-transparent hover:border-rose transition-all duration-300"
+                        class="w-full md:w-1/3 flex flex-col rounded-lg bg-gym_primary group border border-transparent hover:border-rose transition-colors duration-300"
                     >
                         <div
                             class="relative w-full h-48 overflow-hidden rounded-lg"
@@ -207,11 +257,11 @@
                             </div>
                             <img
                                 class="w-full h-full object-cover group-hover:scale-110 transition-all duration-300"
-                                src="https://sangle2000.github.io/FitLife-Premium-Fitness-Club/assets/images/yoga_class_1773061880929.png"
-                                alt="Gym Image 1"
+                                src="./assets/images/yoga_class.png"
+                                alt="Gym Image 2"
                             />
                             <div
-                                class="absolute inset-0 bg-gradient-to-b from-transparent to-gym_primary/70"
+                                class="absolute inset-0 bg-linear-to-b from-transparent to-gym_primary/70"
                             ></div>
                         </div>
                         <div class="p-6">
@@ -227,9 +277,11 @@
                             </p>
                         </div>
 
-                        <hr class="mx-5 border-[0.5px] border-gray-800" />
+                        <hr
+                            class="mx-5 border-[0.5px] border-gray-800 mt-auto"
+                        />
                         <div
-                            class="flex justify-between items-center px-5 py-4"
+                            class="flex justify-between items-center px-5 py-4 mb-4"
                         >
                             <div
                                 class="py-1 px-2 bg-header text-sm rounded-sm font-semibold text-white"
@@ -238,7 +290,7 @@
                             </div>
                             <a
                                 class="text-rose font-semibold text-sm group-hover:underline transition-colors duration-300"
-                                href="#"
+                                href="./about/index.html"
                             >
                                 Tư vấn ngay
                                 <i class="fa-solid fa-arrow-right ml-1"></i>
@@ -246,7 +298,7 @@
                         </div>
                     </article>
                     <article
-                        class="h-150 w-1/3 rounded-lg bg-gym_primary group border border-transparent hover:border-rose transition-all duration-300"
+                        class="w-full md:w-1/3 flex flex-col rounded-lg bg-gym_primary group border border-transparent hover:border-rose transition-all duration-300"
                     >
                         <div
                             class="relative w-full h-48 overflow-hidden rounded-lg"
@@ -258,11 +310,11 @@
                             </div> -->
                             <img
                                 class="w-full h-full object-cover group-hover:scale-110 transition-all duration-300"
-                                src="https://sangle2000.github.io/FitLife-Premium-Fitness-Club/assets/images/tang_co_tham_my_course_cover_1773334586403.png"
-                                alt="Gym Image 1"
+                                src="./assets/images/tang_co_tham_my.png"
+                                alt="Gym Image 3"
                             />
                             <div
-                                class="absolute inset-0 bg-gradient-to-b from-transparent to-gym_primary/70"
+                                class="absolute inset-0 bg-linear-to-b from-transparent to-gym_primary/70"
                             ></div>
                         </div>
                         <div class="p-6">
@@ -278,9 +330,11 @@
                             </p>
                         </div>
 
-                        <hr class="mx-5 border-[0.5px] border-gray-800" />
+                        <hr
+                            class="mx-5 border-[0.5px] border-gray-800 mt-auto"
+                        />
                         <div
-                            class="flex justify-between items-center px-5 py-4"
+                            class="flex justify-between items-center px-5 py-4 mb-4"
                         >
                             <div
                                 class="py-1 px-2 bg-header text-sm font-semibold rounded-sm text-white"
@@ -289,7 +343,7 @@
                             </div>
                             <a
                                 class="text-rose font-semibold text-sm group-hover:underline transition-colors duration-300"
-                                href="#"
+                                href="./about/index.html"
                             >
                                 Tư vấn ngay
                                 <i class="fa-solid fa-arrow-right ml-1"></i>
@@ -299,10 +353,124 @@
                 </div>
             </section>
         </main>
-        <footer class="bg-black py-6">
-            <p class="text-center text-gray-500 text-sm">
-                &copy; 2026 Rikkei Education. Fullstack JavaScript.
-            </p>
+
+        <!-- Footer -->
+        <footer class="bg-black text-gray-400">
+            <div
+                class="max-w-6xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between gap-12"
+            >
+                <div class="flex flex-col gap-3">
+                    <a href="./index.html" class="flex items-baseline gap-2">
+                        <i
+                            class="fa-solid fa-dumbbell text-light_rose text-xl"
+                        ></i>
+                        <span class="text-white text-xl font-bold"
+                            >FIT<span class="text-light_rose">LIFE</span></span
+                        >
+                    </a>
+                    <p class="text-sm max-w-56 leading-relaxed">
+                        Premium Fitness Club – Nơi giới hạn của bạn bị phá vỡ
+                        mỗi ngày.
+                    </p>
+                </div>
+                <div>
+                    <p class="text-white font-semibold mb-4">Điều hướng</p>
+                    <ul class="flex flex-col gap-2 text-sm">
+                        <li>
+                            <a
+                                href="./index.html"
+                                class="hover:text-light_rose transition-colors duration-300"
+                                >Trang chủ</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="./services/index.html"
+                                class="hover:text-light_rose transition-colors duration-300"
+                                >Dịch vụ</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="./lessons/index.html"
+                                class="hover:text-light_rose transition-colors duration-300"
+                                >Lớp học</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="./about/index.html"
+                                class="hover:text-light_rose transition-colors duration-300"
+                                >Liên hệ</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="text-white font-semibold mb-4">Liên hệ</p>
+                    <ul class="flex flex-col gap-2 text-sm">
+                        <li>
+                            <i
+                                class="fa-solid fa-location-dot text-rose mr-2"
+                            ></i
+                            >Số 123, Đường ABC, Hà Nội
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone text-rose mr-2"></i
+                            >0123.456.789
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-envelope text-rose mr-2"></i
+                            >info@fitlife.com
+                        </li>
+                        <li>
+                            <i class="fa-regular fa-clock text-rose mr-2"></i>Mở
+                            cửa 24/7
+                        </li>
+                    </ul>
+                </div>
+                <!-- Social -->
+                <div>
+                    <p class="text-white font-semibold mb-4">
+                        Theo dõi chúng tôi
+                    </p>
+                    <div class="flex gap-3">
+                        <a
+                            href="#"
+                            class="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center hover:bg-rose transition-colors duration-300"
+                            ><i
+                                class="fa-brands fa-facebook-f text-white text-sm"
+                            ></i
+                        ></a>
+                        <a
+                            href="#"
+                            class="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center hover:bg-rose transition-colors duration-300"
+                            ><i
+                                class="fa-brands fa-instagram text-white text-sm"
+                            ></i
+                        ></a>
+                        <a
+                            href="#"
+                            class="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center hover:bg-rose transition-colors duration-300"
+                            ><i
+                                class="fa-brands fa-tiktok text-white text-sm"
+                            ></i
+                        ></a>
+                        <a
+                            href="#"
+                            class="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center hover:bg-rose transition-colors duration-300"
+                            ><i
+                                class="fa-brands fa-youtube text-white text-sm"
+                            ></i
+                        ></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 py-4">
+                <p class="text-center text-gray-600 text-sm">
+                    &copy; 2026 Rikkei Education. Fullstack JavaScript.
+                </p>
+            </div>
         </footer>
     </body>
 </html>

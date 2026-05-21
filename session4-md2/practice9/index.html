@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Bài 9 - Event Bubbling</title>
+
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+            }
+
+            #parent {
+                width: 350px;
+                height: 200px;
+                background-color: lightblue;
+                border: 2px solid blue;
+                padding: 20px;
+                margin-top: 20px;
+            }
+
+            #child {
+                padding: 10px 20px;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Bài 9 - Ngăn chặn sự kiện lan truyền</h1>
+
+        <p>Mở Console, sau đó click vào Parent hoặc Child để xem kết quả.</p>
+
+        <div id="parent">
+            <h2>Parent</h2>
+            <button id="child">Child</button>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

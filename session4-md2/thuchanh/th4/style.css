@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding-top: 50px;
+}
+
+#box {
+    width: 300px;
+    height: 150px;
+    border: 2px solid #333;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightgray;
+    transition: background-color 0.3s ease;
+}
+
+.highlight {
+    background-color: yellow !important;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}

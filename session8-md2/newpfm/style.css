@@ -1,0 +1,714 @@
+/* =========================
+   Personal Finance Manager
+   Optimized Single CSS File
+   ========================= */
+
+/* ---------- Base ---------- */
+:root {
+    --color-bg: #f4f6f8;
+    --color-surface: #ffffff;
+    --color-surface-soft: #f8fafc;
+
+    --color-text: #111827;
+    --color-muted: #64748b;
+    --color-border: #e5e7eb;
+
+    --color-primary: #16a34a;
+    --color-primary-hover: #15803d;
+
+    --color-info: #2563eb;
+    --color-info-hover: #1d4ed8;
+
+    --color-danger: #dc2626;
+    --color-danger-hover: #b91c1c;
+
+    --color-secondary: #6b7280;
+    --color-secondary-hover: #4b5563;
+
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 18px;
+
+    --shadow-card: 0 10px 24px rgba(15, 23, 42, 0.06);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(22, 163, 74, 0.12),
+            transparent 30%
+        ),
+        var(--color-bg);
+    color: var(--color-text);
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+button:disabled,
+input:disabled,
+select:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* ---------- Layout ---------- */
+.container {
+    width: min(1180px, 100%);
+    margin: 0 auto;
+    padding: 32px 24px;
+}
+
+h1 {
+    margin: 0 0 32px;
+    text-align: center;
+    font-size: 36px;
+    line-height: 1.2;
+    color: var(--color-text);
+}
+
+.card {
+    margin-bottom: 24px;
+    padding: 24px;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+}
+
+.card h2 {
+    margin: 0 0 18px;
+    color: var(--color-text);
+}
+
+/* ---------- Dashboard ---------- */
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.dashboard div {
+    padding: 20px;
+    background: linear-gradient(135deg, var(--color-surface-soft), #ffffff);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+}
+
+.dashboard div:nth-child(1) {
+    border-left: 5px solid var(--color-info);
+}
+
+.dashboard div:nth-child(2) {
+    border-left: 5px solid var(--color-primary);
+}
+
+.dashboard div:nth-child(3) {
+    border-left: 5px solid var(--color-danger);
+}
+
+.dashboard p {
+    margin: 0 0 10px;
+    color: var(--color-muted);
+    font-weight: 600;
+}
+
+.dashboard strong {
+    font-size: 28px;
+    color: var(--color-text);
+}
+
+.dashboard-budget {
+    margin-top: 18px;
+    padding: 18px 20px;
+    background-color: var(--color-surface-soft);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+}
+
+.dashboard-budget-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.dashboard-budget-title p {
+    margin: 0;
+    color: var(--color-muted);
+    font-weight: 600;
+}
+
+.dashboard-budget-title span {
+    margin-left: 6px;
+    color: var(--color-text);
+    font-weight: 700;
+}
+
+#budgetUsedPercent {
+    font-size: 22px;
+    color: var(--color-text);
+}
+
+.dashboard-budget-track {
+    width: 100%;
+    height: 12px;
+    background-color: #e5e7eb;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.dashboard-budget-fill {
+    width: 0%;
+    height: 100%;
+    background-color: var(--color-primary);
+    border-radius: inherit;
+    transition:
+        width 0.25s ease,
+        background-color 0.25s ease;
+}
+
+.dashboard-budget-track.is-over .dashboard-budget-fill {
+    background-color: var(--color-danger);
+}
+
+.dashboard-budget-note {
+    margin: 12px 0 0;
+    color: var(--color-muted);
+    font-size: 14px;
+}
+
+/* ---------- Forms ---------- */
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+input,
+select {
+    min-width: 180px;
+    padding: 10px 12px;
+    color: var(--color-text);
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: var(--radius-sm);
+    outline: none;
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+}
+
+input:focus,
+select:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15);
+}
+
+button {
+    padding: 10px 14px;
+    color: #ffffff;
+    background-color: var(--color-primary);
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+    transition:
+        background-color 0.2s,
+        transform 0.1s;
+}
+
+button:hover {
+    background-color: var(--color-primary-hover);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.secondary-btn {
+    background-color: var(--color-secondary);
+}
+
+.secondary-btn:hover {
+    background-color: var(--color-secondary-hover);
+}
+
+/* ---------- Lists ---------- */
+ul {
+    margin: 16px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-top: 10px;
+    padding: 14px;
+    background-color: var(--color-surface-soft);
+    border-radius: var(--radius-md);
+}
+
+.item-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.edit-category-btn,
+.edit-transaction-btn {
+    background-color: var(--color-info);
+}
+
+.edit-category-btn:hover,
+.edit-transaction-btn:hover {
+    background-color: var(--color-info-hover);
+}
+
+.delete-category-btn,
+.delete-transaction-btn {
+    background-color: var(--color-danger);
+}
+
+.delete-category-btn:hover,
+.delete-transaction-btn:hover {
+    background-color: var(--color-danger-hover);
+}
+
+/* ---------- Transaction History ---------- */
+.transaction-item {
+    gap: 16px;
+}
+
+.transaction-item p {
+    margin: 6px 0 0;
+    color: var(--color-muted);
+    font-size: 14px;
+}
+
+.transaction-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.income-text {
+    color: var(--color-primary);
+}
+
+.expense-text {
+    color: var(--color-danger);
+}
+
+.empty-item {
+    justify-content: center;
+    color: var(--color-muted);
+}
+
+/* ---------- Budget Alerts ---------- */
+.alert-overview {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.alert-overview div {
+    padding: 16px;
+    background-color: var(--color-surface-soft);
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+}
+
+.alert-overview p {
+    margin: 0 0 8px;
+    color: var(--color-muted);
+    font-size: 14px;
+}
+
+.alert-overview strong {
+    font-size: 28px;
+    color: var(--color-text);
+}
+
+.alert-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.budget-card {
+    padding: 18px;
+    background-color: #ffffff;
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+}
+
+.budget-card-safe {
+    background-color: #f0fdf4;
+    border-color: #bbf7d0;
+}
+
+.budget-card-danger {
+    background-color: #fef2f2;
+    border-color: #fecaca;
+}
+
+.budget-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.budget-card-header h3 {
+    margin: 0 0 6px;
+    font-size: 18px;
+}
+
+.budget-card-header p {
+    margin: 0;
+    color: var(--color-muted);
+    font-size: 14px;
+}
+
+.budget-badge-safe,
+.budget-badge-danger {
+    flex-shrink: 0;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.budget-badge-safe {
+    color: #166534;
+    background-color: #dcfce7;
+}
+
+.budget-badge-danger {
+    color: #991b1b;
+    background-color: #fee2e2;
+}
+
+.budget-progress {
+    width: 100%;
+    height: 10px;
+    margin-bottom: 14px;
+    background-color: #e5e7eb;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.budget-progress-fill-safe,
+.budget-progress-fill-danger {
+    height: 100%;
+    border-radius: 999px;
+}
+
+.budget-progress-fill-safe {
+    background-color: var(--color-primary);
+}
+
+.budget-progress-fill-danger {
+    background-color: var(--color-danger);
+}
+
+.budget-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+}
+
+.budget-card-footer span {
+    color: var(--color-muted);
+}
+
+/* Giữ lại nếu main.ts của bạn vẫn còn renderAlerts bản cũ dùng .alert-item */
+.alert-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 10px;
+    padding: 14px;
+    border-radius: var(--radius-md);
+}
+
+.alert-item p {
+    margin: 6px 0 0;
+    color: var(--color-muted);
+}
+
+.alert-safe {
+    color: #166534;
+    background-color: #ecfdf5;
+    border: 1px solid #86efac;
+}
+
+.alert-danger {
+    color: #991b1b;
+    background-color: #fef2f2;
+    border: 1px solid #fca5a5;
+}
+
+/* ---------- Summary Table ---------- */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.section-header h2 {
+    margin: 0 0 6px;
+}
+
+.section-header p {
+    margin: 0;
+    color: var(--color-muted);
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+    margin-top: 16px;
+}
+
+.summary-table {
+    width: 100%;
+    min-width: 780px;
+    background-color: white;
+    border-collapse: collapse;
+}
+
+.category-table {
+    width: 100%;
+    min-width: 720px;
+    background-color: white;
+    border-collapse: collapse;
+}
+
+.summary-table th,
+.summary-table td {
+    padding: 14px 12px;
+    text-align: left;
+    vertical-align: middle;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.summary-table th {
+    color: #334155;
+    background-color: #f1f5f9;
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.category-table th,
+.category-table td {
+    padding: 14px 12px;
+    text-align: left;
+    vertical-align: middle;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.category-table th {
+    color: #334155;
+    background-color: #f1f5f9;
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.summary-table td {
+    color: var(--color-text);
+}
+
+.category-table td {
+    color: var(--color-text);
+}
+
+.summary-table td strong {
+    color: var(--color-text);
+}
+
+.category-table td strong {
+    color: var(--color-text);
+}
+
+.summary-table tr:hover {
+    background-color: #f9fafb;
+}
+
+.category-table tr:hover {
+    background-color: #f9fafb;
+}
+
+.progress-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.progress-bar {
+    width: 120px;
+    height: 8px;
+    background-color: #e5e7eb;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 999px;
+}
+
+.progress-safe {
+    background-color: var(--color-primary);
+}
+
+.progress-danger {
+    background-color: var(--color-danger);
+}
+
+.status-safe,
+.status-danger {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.status-safe {
+    color: #166534;
+    background-color: #dcfce7;
+}
+
+.status-danger {
+    color: #991b1b;
+    background-color: #fee2e2;
+}
+
+/* ---------- Empty States ---------- */
+.empty-state,
+.empty-table,
+.empty-text {
+    color: var(--color-muted);
+    text-align: center;
+}
+
+.empty-state {
+    padding: 32px;
+    background-color: var(--color-surface-soft);
+    border: 1px dashed #cbd5e1;
+    border-radius: 14px;
+}
+
+.empty-state strong {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 18px;
+    color: var(--color-text);
+}
+
+.empty-state p {
+    margin: 0;
+}
+
+.empty-table {
+    padding: 24px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+    .alert-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px 14px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .card {
+        padding: 18px;
+        border-radius: 14px;
+    }
+
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    form {
+        flex-direction: column;
+    }
+
+    input,
+    select,
+    button {
+        width: 100%;
+    }
+
+    li,
+    .transaction-item,
+    .alert-item {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .item-actions,
+    .transaction-right {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .alert-overview,
+    .alert-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .budget-card-header,
+    .budget-card-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .section-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}

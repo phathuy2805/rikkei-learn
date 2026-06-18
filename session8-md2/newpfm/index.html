@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Personal Finance Manager</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <main class="container">
+            <h1>Quản lý chi tiêu cá nhân</h1>
+
+            <section class="card">
+                <h2>Dashboard</h2>
+
+                <div class="dashboard">
+                    <div>
+                        <p>Số dư</p>
+                        <strong id="balance">0đ</strong>
+                    </div>
+
+                    <div>
+                        <p>Tổng thu</p>
+                        <strong id="totalIncome">0đ</strong>
+                    </div>
+
+                    <div>
+                        <p>Tổng chi</p>
+                        <strong id="totalExpense">0đ</strong>
+                    </div>
+                </div>
+
+                <div class="dashboard-budget">
+                    <div class="dashboard-budget-header">
+                        <div class="dashboard-budget-title">
+                            <p>
+                                Ngân sách tổng
+                                <span id="budgetMonthLabel"></span>
+                            </p>
+                        </div>
+
+                        <strong id="budgetUsedPercent"></strong>
+                    </div>
+
+                    <div class="dashboard-budget-track">
+                        <div
+                            class="dashboard-budget-fill"
+                            id="budgetProgressFill"
+                        ></div>
+                    </div>
+
+                    <p
+                        class="dashboard-budget-note"
+                        id="budgetRemainingLabel"
+                    ></p>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2>Chọn tháng</h2>
+                <input type="month" id="monthPicker" />
+            </section>
+
+            <section class="card">
+                <h2>Thêm danh mục</h2>
+
+                <form id="categoryForm">
+                    <input
+                        type="text"
+                        id="categoryName"
+                        placeholder="Tên danh mục"
+                    />
+
+                    <input
+                        type="number"
+                        id="categoryLimit"
+                        placeholder="Hạn mức"
+                    />
+
+                    <button type="submit" id="categorySubmitBtn">
+                        Thêm danh mục
+                    </button>
+
+                    <button
+                        type="button"
+                        id="cancelCategoryEditBtn"
+                        class="secondary-btn hidden"
+                    >
+                        Hủy sửa
+                    </button>
+                </form>
+
+                <div class="table-wrapper">
+                    <table class="category-table">
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Danh mục</th>
+                                <th>Hạn mức</th>
+                                <th>Đã chi tháng này</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="categoryList"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2>Thêm giao dịch</h2>
+
+                <form id="transactionForm">
+                    <select id="transactionType">
+                        <option value="income">Thu nhập</option>
+                        <option value="expense">Chi tiêu</option>
+                    </select>
+
+                    <input
+                        type="number"
+                        id="transactionAmount"
+                        placeholder="Số tiền"
+                    />
+
+                    <select id="transactionCategory"></select>
+
+                    <input
+                        type="text"
+                        id="transactionNote"
+                        placeholder="Ghi chú"
+                    />
+
+                    <input type="date" id="transactionDate" />
+
+                    <button type="submit" id="transactionSubmitBtn">
+                        Thêm giao dịch
+                    </button>
+                </form>
+            </section>
+
+            <section class="card">
+                <h2>Lịch sử giao dịch</h2>
+                <ul id="transactionList"></ul>
+            </section>
+
+            <section class="card">
+                <h2>Cảnh báo hạn mức</h2>
+                <div id="alertList"></div>
+            </section>
+
+            <section class="card">
+                <div class="section-header">
+                    <div>
+                        <h2>Bảng tổng hợp chi tiêu</h2>
+                        <p>
+                            Theo dõi mức chi tiêu của từng danh mục trong tháng
+                            đang chọn.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="table-wrapper">
+                    <table class="summary-table">
+                        <thead>
+                            <tr>
+                                <th>Danh mục</th>
+                                <th>Đã chi</th>
+                                <th>Hạn mức</th>
+                                <th>Còn lại / Vượt</th>
+                                <th>Tiến độ</th>
+                                <th>Trạng thái</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="summaryTableBody"></tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        <script type="module" src="./src/main.ts"></script>
+    </body>
+</html>

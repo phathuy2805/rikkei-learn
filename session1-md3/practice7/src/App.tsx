@@ -1,10 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
+import WelcomeBanner from './components/WelcomeBanner';
 
 const App: React.FC = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleLogin = () => {
+    setIsLoggedIn(true);
+  };
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+  };
+
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', flexDirection: 'column', gap: '10px' }}>
-      <h1>PRACTICE7</h1>
-      <p>Workspace is ready for implementation!</p>
+    <div style={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      minHeight: '100vh',
+      padding: '24px',
+      boxSizing: 'border-box'
+    }}>
+      <WelcomeBanner
+        isLoggedIn={isLoggedIn}
+        onLogin={handleLogin}
+        onLogout={handleLogout}
+      />
     </div>
   );
 };

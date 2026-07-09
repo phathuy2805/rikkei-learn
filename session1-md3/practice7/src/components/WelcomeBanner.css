@@ -1,0 +1,94 @@
+/* WelcomeBanner.css */
+
+.welcome-card {
+  width: 100%;
+  max-width: 480px;
+  background: rgba(21, 27, 43, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 40px 32px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3),
+              inset 0 1px 1px rgba(255, 255, 255, 0.05);
+  animation: scaleUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.logged-in-container,
+.logged-out-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.welcome-text {
+  font-family: var(--font-title);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.welcome-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+/* Reusable buttons inside card */
+.btn {
+  padding: 12px 28px;
+  border-radius: 12px;
+  font-family: var(--font-title);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.btn-login {
+  background: linear-gradient(135deg, var(--color-primary) 0%, hsl(263, 70%, 50%) 100%);
+  color: var(--text-primary);
+  border: none;
+  box-shadow: 0 8px 20px -6px hsla(244, 75%, 60%, 0.4);
+}
+
+.btn-login:hover {
+  background: linear-gradient(135deg, var(--color-primary-hover) 0%, hsl(263, 70%, 56%) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px -4px hsla(244, 75%, 60%, 0.5);
+}
+
+.btn-login:active {
+  transform: translateY(0);
+}
+
+.btn-logout {
+  background: transparent;
+  color: hsl(0, 84.2%, 60.2%);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.btn-logout:hover {
+  background: rgba(239, 68, 68, 0.08);
+  border-color: rgba(239, 68, 68, 0.6);
+  transform: translateY(-2px);
+}
+
+.btn-logout:active {
+  transform: translateY(0);
+}

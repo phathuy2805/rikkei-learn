@@ -1,10 +1,17 @@
 import React from 'react';
+import LoginForm from './components/LoginForm';
 
 const App: React.FC = () => {
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', flexDirection: 'column', gap: '10px' }}>
-      <h1>PRACTICE6</h1>
-      <p>Workspace is ready for implementation!</p>
+    <div style={{ 
+      display: 'flex', 
+      justifyContent: 'center', 
+      alignItems: 'center', 
+      minHeight: '100vh', 
+      padding: '24px',
+      boxSizing: 'border-box'
+    }}>
+      <LoginForm />
     </div>
   );
 };

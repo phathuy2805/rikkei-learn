@@ -1,0 +1,58 @@
+:root {
+    /* Color system */
+    --bg-main: hsl(224, 25%, 10%);
+    --bg-gradient: radial-gradient(
+        circle at 50% -20%,
+        hsl(244, 50%, 20%) 0%,
+        hsl(224, 25%, 10%) 80%
+    );
+    --bg-card: hsl(224, 25%, 15%);
+    --bg-card-highlight: hsl(224, 25%, 18%);
+
+    --border-card: hsla(224, 25%, 25%, 0.5);
+    --border-highlight: hsl(244, 75%, 60%);
+    --shadow-highlight: 0 10px 30px -10px hsla(244, 75%, 60%, 0.3);
+
+    --text-primary: hsl(0, 0%, 95%);
+    --text-secondary: hsl(224, 15%, 70%);
+    --text-muted: hsl(224, 15%, 55%);
+
+    --color-primary: hsl(244, 75%, 60%);
+    --color-primary-hover: hsl(244, 75%, 66%);
+
+    --color-success: hsl(142, 70%, 50%);
+
+    /* Fonts */
+    --font-title: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--bg-main);
+    background-image: var(--bg-gradient);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+a:hover {
+    color: var(--color-primary-hover);
+}

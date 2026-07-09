@@ -195,10 +195,32 @@ function renderCategories(): void {
 
     updateTransactionCategoryState()
 }
+let currentPage = 1
+const itemsPerPage = 5
+
+function getPaginationItems(items: Transaction[]) {
+    const totalPages = Math.max(1, Math.ceil(items.length / itemsPerPage))
+    const start = (currentPage - 1) * itemsPerPage
+    const end = start + itemsPerPage
+
+    return {
+        items: items.slice(start, end),
+        totalPages,
+        currentPage: currentPage,
+    }
+}
 
 function renderTransactions(): void {
     if (!transactionListElement) {
         return
+    }
+
+    const transactionContainer = transactionListElement.parentElement
+
+    if (transactionContainer) {
+        const existingPagination =
+            transactionContainer.querySelector('.pagination')
+        existingPagination?.remove()
     }
 
     const monthlyTransactions = getTransactionsByMonth(
@@ -207,6 +229,8 @@ function renderTransactions(): void {
     ).sort((a, b) => {
         return new Date(b.date).getTime() - new Date(a.date).getTime()
     })
+
+    const paged = getPaginationItems(monthlyTransactions)
 
     transactionListElement.innerHTML = ''
 
@@ -217,7 +241,7 @@ function renderTransactions(): void {
         return
     }
 
-    monthlyTransactions.forEach((transaction) => {
+    paged.items.forEach((transaction) => {
         const li = document.createElement('li')
 
         const isIncome = transaction.type === 'income'
@@ -256,8 +280,58 @@ function renderTransactions(): void {
 
         transactionListElement.appendChild(li)
     })
+
+    if (transactionContainer) {
+        const pagination = document.createElement('div')
+        pagination.className = 'pagination'
+
+        pagination.innerHTML = `
+            <button 
+                ${paged.currentPage === 1 ? 'disabled' : ''}
+                data-action="prev"
+            >
+                Trang trước
+            </button>
+            <span>Trang ${paged.currentPage} / ${paged.totalPages}</span>
+            <button 
+                ${paged.currentPage === paged.totalPages ? 'disabled' : ''}
+                data-action="next"
+            >
+                Trang sau
+            </button>
+        `
+
+        transactionContainer.appendChild(pagination)
+    }
 }
 
+document.addEventListener('click', (event) => {
+    const target = event.target as HTMLElement
+
+    if (target.dataset.action === 'prev' && currentPage > 1) {
+        currentPage--
+        renderTransactions()
+        return
+    }
+
+    if (target.dataset.action === 'next') {
+        const monthlyTransactions = getTransactionsByMonth(
+            transactions,
+            selectedMonth,
+        ).sort((a, b) => {
+            return new Date(b.date).getTime() - new Date(a.date).getTime()
+        })
+        const totalPages = Math.max(
+            1,
+            Math.ceil(monthlyTransactions.length / itemsPerPage),
+        )
+
+        if (currentPage < totalPages) {
+            currentPage++
+            renderTransactions()
+        }
+    }
+})
 function renderAlerts(): void {
     if (!alertListElement) {
         return

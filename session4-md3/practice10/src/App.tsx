@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useForm, useFieldArray } from 'react-hook-form'
+import { useForm, useFieldArray, type Resolver } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
 
@@ -57,7 +57,7 @@ export default function App() {
       classSize: '',
       students: [],
     },
-    resolver: yupResolver(lmsSchema) as any,
+    resolver: yupResolver(lmsSchema) as unknown as Resolver<LMSFormValues>,
   })
 
   // Hook into field arrays for dynamic inputs

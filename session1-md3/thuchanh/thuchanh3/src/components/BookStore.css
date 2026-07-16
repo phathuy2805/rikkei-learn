@@ -1,0 +1,125 @@
+.store-container {
+    max-width: 480px;
+    margin: 40px auto;
+    font-family: system-ui, -apple-system, sans-serif;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+}
+
+.store-header {
+    background: #0f172a;
+    color: #ffffff;
+    padding: 18px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #1e293b;
+}
+
+.store-title {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.store-actions {
+    display: flex;
+}
+
+.btn-action {
+    border: none;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-clear {
+    background: #ef4444;
+    color: #ffffff;
+}
+
+.btn-clear:hover {
+    background: #dc2626;
+}
+
+.btn-reset {
+    background: #10b981;
+    color: #ffffff;
+}
+
+.btn-reset:hover {
+    background: #059669;
+}
+
+.book-list {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.book-item {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 14px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.book-item:hover {
+    transform: translateY(-1px);
+    border-color: #cbd5e1;
+}
+
+.book-info {
+    flex-grow: 1;
+}
+
+.book-title {
+    margin: 0 0 4px 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.book-author {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #64748b;
+}
+
+.btn-delete-book {
+    background: #fee2e2;
+    color: #ef4444;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s, color 0.15s;
+}
+
+.btn-delete-book:hover {
+    background: #fca5a5;
+    color: #b91c1c;
+}
+
+.empty-store-message {
+    padding: 40px 24px;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #dc2626;
+    background: #fff5f5;
+    border-top: 1px solid #fee2e2;
+    font-weight: 500;
+}

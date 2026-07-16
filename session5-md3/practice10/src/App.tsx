@@ -2,8 +2,6 @@ import { useState, useEffect } from 'react'
 import * as api from './apiClient'
 import type { ApiError, RawParams } from './apiClient'
 
-// ─── Types ────────────────────────────────────────────────────────────────────
-
 interface LogEntry {
   id: number
   time: string
@@ -17,8 +15,6 @@ interface LogEntry {
   responsePreview?: string
   durationMs?: number
 }
-
-// ─── Constants ────────────────────────────────────────────────────────────────
 
 const SCENARIOS: {
   id: string
@@ -125,18 +121,15 @@ const METHOD_COLORS: Record<string, string> = {
   DELETE: 'text-rose-400   bg-rose-500/10    border-rose-500/20',
 }
 
-// ─── Component ────────────────────────────────────────────────────────────────
-
 export default function App() {
-  const [token, setToken]       = useState<string | null>(() => localStorage.getItem('auth_token'))
-  const [logs, setLogs]         = useState<LogEntry[]>([])
-  const [loading, setLoading]   = useState<string | null>(null)  // scenario id
-  const [toast, setToast]       = useState<{ type: 'warn' | 'error' | 'success'; msg: string } | null>(null)
+  const [token, setToken]         = useState<string | null>(() => localStorage.getItem('auth_token'))
+  const [logs, setLogs]           = useState<LogEntry[]>([])
+  const [loading, setLoading]     = useState<string | null>(null)
+  const [toast, setToast]         = useState<{ type: 'warn' | 'error' | 'success'; msg: string } | null>(null)
   const [activeTab, setActiveTab] = useState<'playground' | 'architecture'>('playground')
   const [selectedLog, setSelectedLog] = useState<LogEntry | null>(null)
   const logId = useState(0)
 
-  // ── Global event listeners from the interceptor ───────────────────────────
   useEffect(() => {
     const onUnauthorized = () => {
       setToken(null)
@@ -145,7 +138,6 @@ export default function App() {
     const onServerError = () => {
       showToast('error', '🔥 500 Bắt được từ Interceptor: Lỗi máy chủ nghiêm trọng — đã ghi nhận để báo cáo.')
     }
-
     window.addEventListener('api:unauthorized', onUnauthorized)
     window.addEventListener('api:server-error',  onServerError)
     return () => {
@@ -154,7 +146,6 @@ export default function App() {
     }
   }, [])
 
-  // ── Toast auto-dismiss ────────────────────────────────────────────────────
   useEffect(() => {
     if (!toast) return
     const t = setTimeout(() => setToast(null), 5000)
@@ -165,7 +156,6 @@ export default function App() {
     setToast({ type, msg })
   }
 
-  // ── Auth helpers ──────────────────────────────────────────────────────────
   function handleLogin() {
     const mockToken = 'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiVGVjaExlYWQiLCJyb2xlIjoiYWRtaW4ifQ.MOCK_SIGNATURE'
     localStorage.setItem('auth_token', mockToken)
@@ -179,7 +169,6 @@ export default function App() {
     showToast('warn', 'Đã đăng xuất — Authorization header sẽ không còn được gắn vào request.')
   }
 
-  // ── Execute a scenario ────────────────────────────────────────────────────
   async function runScenario(scenarioId: string) {
     const scenario = SCENARIOS.find((s) => s.id === scenarioId)
     if (!scenario || loading) return
@@ -189,7 +178,6 @@ export default function App() {
     const time = new Date().toLocaleTimeString()
     const nextId = ++logId[0]
 
-    // Pending entry
     const pending: LogEntry = {
       id: nextId,
       time,
@@ -242,11 +230,8 @@ export default function App() {
     }
   }
 
-  // ─────────────────────────────────────────────────────────────────────────
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 font-sans pb-16">
-
-      {/* ── Toast ── */}
       {toast && (
         <div className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 max-w-xl w-full mx-4 px-5 py-3.5 rounded-xl shadow-2xl border backdrop-blur-md text-sm font-medium transition-all ${
           toast.type === 'success' ? 'bg-emerald-950/90 border-emerald-500/40 text-emerald-200' :
@@ -263,7 +248,6 @@ export default function App() {
         </div>
       )}
 
-      {/* ── Header ── */}
       <header className="sticky top-0 z-30 border-b border-slate-800 bg-slate-900/70 backdrop-blur">
         <div className="max-w-7xl mx-auto px-6 py-3.5 flex items-center justify-between gap-6 flex-wrap">
           <div className="flex items-center gap-3">
@@ -281,16 +265,13 @@ export default function App() {
           </div>
 
           <div className="flex items-center gap-3">
-            {/* Tabs */}
             <div className="bg-slate-950 border border-slate-800 rounded-lg p-1 flex gap-1">
               {(['playground', 'architecture'] as const).map((tab) => (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
                   className={`px-3 py-1 rounded text-[11px] font-semibold transition-all font-outfit ${
-                    activeTab === tab
-                      ? 'bg-cyan-600 text-white'
-                      : 'text-slate-400 hover:text-slate-200'
+                    activeTab === tab ? 'bg-cyan-600 text-white' : 'text-slate-400 hover:text-slate-200'
                   }`}
                 >
                   {tab === 'playground' ? '🧪 Playground' : '🏗️ Kiến trúc'}
@@ -298,7 +279,6 @@ export default function App() {
               ))}
             </div>
 
-            {/* Auth pill */}
             {token ? (
               <div className="flex items-center gap-2.5 bg-slate-900 border border-slate-800 rounded-xl px-3 py-1.5">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"/>
@@ -319,13 +299,8 @@ export default function App() {
         </div>
       </header>
 
-      {/* ═══════════════════════════════════════════════════════════════════════ */}
-      {/* PLAYGROUND TAB                                                          */}
-      {/* ═══════════════════════════════════════════════════════════════════════ */}
       {activeTab === 'playground' && (
         <main className="max-w-7xl mx-auto px-6 mt-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
-
-          {/* ── Left: Scenario cards ── */}
           <section className="lg:col-span-5 space-y-4">
             <div className="flex items-center justify-between mb-2">
               <h2 className="text-sm font-bold text-slate-300 uppercase tracking-wider font-outfit">📋 Kịch bản thử nghiệm</h2>
@@ -339,7 +314,7 @@ export default function App() {
             {SCENARIOS.map((scenario) => (
               <div
                 key={scenario.id}
-                className={`bg-slate-900 border rounded-xl p-4 transition-all hover:border-cyan-500/30 group cursor-pointer ${
+                className={`bg-slate-900 border rounded-xl p-4 transition-all hover:border-cyan-500/30 cursor-pointer ${
                   loading === scenario.id ? 'border-cyan-500/50 shadow-lg shadow-cyan-500/10' : 'border-slate-800'
                 }`}
               >
@@ -368,7 +343,6 @@ export default function App() {
 
                 <p className="text-[11px] text-slate-400 leading-relaxed">{scenario.description}</p>
 
-                {/* Params preview */}
                 {scenario.params && (
                   <div className="mt-2.5 bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 font-mono text-[10px] text-slate-400">
                     <span className="text-slate-500">params: </span>
@@ -385,10 +359,7 @@ export default function App() {
             ))}
           </section>
 
-          {/* ── Right: Log + detail ── */}
           <section className="lg:col-span-7 flex flex-col gap-6">
-
-            {/* Request detail pane */}
             {selectedLog && (
               <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xl">
                 <div className="flex items-center justify-between mb-3">
@@ -400,8 +371,9 @@ export default function App() {
                       </span>
                     )}
                     <span className={`text-[10px] font-bold px-2 py-0.5 rounded border ${
-                      selectedLog.status === 'success' ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
-                      : 'bg-rose-500/10 text-rose-400 border-rose-500/20'
+                      selectedLog.status === 'success'
+                        ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
+                        : 'bg-rose-500/10 text-rose-400 border-rose-500/20'
                     }`}>
                       {selectedLog.statusCode ?? '—'}
                     </span>
@@ -432,7 +404,6 @@ export default function App() {
               </div>
             )}
 
-            {/* Network log */}
             <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xl flex-1">
               <div className="flex items-center justify-between mb-3">
                 <h3 className="text-xs font-bold text-slate-300 uppercase tracking-wider font-outfit">🖥 Network Console</h3>
@@ -478,9 +449,7 @@ export default function App() {
                             {log.status === 'pending' ? (
                               <span className="w-3 h-3 border-2 border-cyan-500 border-t-transparent rounded-full animate-spin inline-block"/>
                             ) : (
-                              <span className={`font-bold ${
-                                log.status === 'success' ? 'text-emerald-400' : 'text-rose-400'
-                              }`}>
+                              <span className={`font-bold ${log.status === 'success' ? 'text-emerald-400' : 'text-rose-400'}`}>
                                 {log.statusCode ?? 'ERR'}
                               </span>
                             )}
@@ -496,30 +465,24 @@ export default function App() {
                 )}
               </div>
             </div>
-
           </section>
         </main>
       )}
 
-      {/* ═══════════════════════════════════════════════════════════════════════ */}
-      {/* ARCHITECTURE TAB                                                         */}
-      {/* ═══════════════════════════════════════════════════════════════════════ */}
       {activeTab === 'architecture' && (
         <main className="max-w-5xl mx-auto px-6 mt-8 space-y-8">
-
-          {/* Flowchart */}
           <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl">
             <h2 className="text-base font-bold text-slate-200 font-outfit mb-5">📐 Luồng xử lý Request — Response</h2>
             <div className="flex flex-col items-center gap-0 text-[11px] font-mono">
               {[
                 { label: 'UI code: api.get("/posts", { q: "react", page: undefined })', color: 'border-blue-500/40 bg-blue-950/20 text-blue-300' },
-                { label: '↓ sanitiseParams() → strip undefined / null / ""', color: 'border-violet-500/40 bg-violet-950/20 text-violet-300', arrow: true },
+                { label: '↓ sanitiseParams() → strip undefined / null / ""', color: 'border-violet-500/40 bg-violet-950/20 text-violet-300' },
                 { label: 'Axios Instance  (baseURL, timeout: 5000ms)', color: 'border-cyan-500/40 bg-cyan-950/20 text-cyan-300' },
-                { label: '↓ Request Interceptor → inject Authorization: Bearer <token>', color: 'border-cyan-500/40 bg-cyan-950/20 text-cyan-300', arrow: true },
+                { label: '↓ Request Interceptor → inject Authorization: Bearer <token>', color: 'border-cyan-500/40 bg-cyan-950/20 text-cyan-300' },
                 { label: '🌐 HTTP Request → server', color: 'border-slate-600 bg-slate-800 text-slate-300' },
-                { label: '↓ Response Interceptor (success) → return response.data only', color: 'border-emerald-500/40 bg-emerald-950/20 text-emerald-300', arrow: true },
-                { label: '↓ Response Interceptor (401) → clear token + fire api:unauthorized', color: 'border-amber-500/40 bg-amber-950/20 text-amber-300', arrow: true },
-                { label: '↓ Response Interceptor (500) → fire api:server-error + normalise error', color: 'border-rose-500/40 bg-rose-950/20 text-rose-300', arrow: true },
+                { label: '↓ Response Interceptor (success) → return response.data only', color: 'border-emerald-500/40 bg-emerald-950/20 text-emerald-300' },
+                { label: '↓ Response Interceptor (401) → clear token + fire api:unauthorized', color: 'border-amber-500/40 bg-amber-950/20 text-amber-300' },
+                { label: '↓ Response Interceptor (500) → fire api:server-error + normalise error', color: 'border-rose-500/40 bg-rose-950/20 text-rose-300' },
                 { label: 'UI code receives: plain data object  OR  ApiError { status, message }', color: 'border-blue-500/40 bg-blue-950/20 text-blue-300' },
               ].map((step, i) => (
                 <div key={i} className={`w-full max-w-2xl px-4 py-2.5 border rounded-xl text-center leading-relaxed ${step.color} my-1`}>
@@ -529,10 +492,7 @@ export default function App() {
             </div>
           </div>
 
-          {/* Module source highlights */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            
-            {/* sanitiseParams */}
             <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-3">
               <h3 className="text-xs font-bold text-violet-400 uppercase tracking-wider">🧹 sanitiseParams()</h3>
               <p className="text-[11px] text-slate-400 leading-relaxed">
@@ -551,7 +511,6 @@ GET /posts?q=react   ✅`}
               </pre>
             </div>
 
-            {/* Response unwrap */}
             <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-3">
               <h3 className="text-xs font-bold text-cyan-400 uppercase tracking-wider">📦 Response.data Unwrapping</h3>
               <p className="text-[11px] text-slate-400 leading-relaxed">
@@ -568,7 +527,6 @@ const data = await api.get('/posts')
               </pre>
             </div>
 
-            {/* CRUD exports */}
             <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-3">
               <h3 className="text-xs font-bold text-emerald-400 uppercase tracking-wider">🔧 CRUD Helpers</h3>
               <p className="text-[11px] text-slate-400 leading-relaxed">
@@ -584,7 +542,6 @@ await api.remove('/posts/1')`}
               </pre>
             </div>
 
-            {/* Error normalisation */}
             <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-3">
               <h3 className="text-xs font-bold text-rose-400 uppercase tracking-wider">🛡 ApiError Chuẩn hóa</h3>
               <p className="text-[11px] text-slate-400 leading-relaxed">
@@ -606,7 +563,6 @@ try {
               </pre>
             </div>
           </div>
-
         </main>
       )}
 

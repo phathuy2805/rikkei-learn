@@ -1,4 +1,4 @@
-import { CartProvider } from './context/CartContext'
+import { CartProvider } from './context/CartProvider'
 import CourseList from './components/CourseList'
 import CartPanel from './components/CartPanel'
 

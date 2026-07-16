@@ -1,40 +1,44 @@
+import { CartProvider } from './context/CartContext'
+import CourseList from './components/CourseList'
+import CartPanel from './components/CartPanel'
+
 export default function App() {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col items-center justify-center p-6">
-      <div className="max-w-md w-full bg-slate-900 rounded-2xl shadow-2xl border border-slate-800 p-8 text-center transition-all duration-300 hover:border-blue-500/50 hover:shadow-blue-500/10">
-        <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-500/10 text-blue-400 mb-6 border border-blue-500/20">
-          <i className="fa-solid fa-laptop-code text-2xl"></i>
-        </div>
-        <h1 className="text-3xl font-extrabold mb-4 bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent font-outfit">
-          React + TS + Tailwind
-        </h1>
-        <p className="text-slate-400 text-sm leading-relaxed mb-6 font-inter">
-          This boilerplate has been successfully initialized. Start building your modern interface with dynamic layouts, responsive elements, and Tailwind utility classes.
-        </p>
-        <div className="grid grid-cols-2 gap-4">
-          <a
-            href="https://react.dev"
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center justify-center gap-2 px-4 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-xl font-medium text-sm transition-all border border-slate-700 hover:border-slate-600"
-          >
-            <i className="fa-brands fa-react text-blue-400"></i>
-            React Docs
-          </a>
-          <a
-            href="https://tailwindcss.com"
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center justify-center gap-2 px-4 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-xl font-medium text-sm transition-all border border-slate-700 hover:border-slate-600"
-          >
-            <i className="fa-solid fa-wind text-teal-400"></i>
-            Tailwind CSS
-          </a>
+    <CartProvider>
+      <div className="min-h-screen bg-slate-950 text-slate-100 py-12 px-6 font-sans">
+        <div className="max-w-6xl mx-auto">
+          {/* Header Banner */}
+          <div className="text-center mb-12">
+            <span className="text-blue-500 text-xs font-semibold tracking-wider uppercase bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20">
+              State Coordination
+            </span>
+            <h1 className="text-4xl md:text-5xl font-extrabold mt-3 bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent font-outfit">
+              Cart State Coordinator
+            </h1>
+            <p className="text-slate-400 mt-2 max-w-lg mx-auto text-sm">
+              Atomically synchronizing shopping cart actions, coupon code mappings, and discount pricing rules inside a React <code>useReducer</code>.
+            </p>
+          </div>
+
+          {/* Grid Panel Layout */}
+          <div className="grid lg:grid-cols-12 gap-8 items-start">
+            {/* Available Products */}
+            <div className="lg:col-span-7">
+              <CourseList />
+            </div>
+
+            {/* Shopping Cart Summary */}
+            <div className="lg:col-span-5 lg:sticky lg:top-6">
+              <CartPanel />
+            </div>
+          </div>
+
+          {/* Footer Info */}
+          <div className="mt-12 text-center text-xs text-slate-600">
+            Rikkei Education • Module 3 • Session 2 • Practice 8
+          </div>
         </div>
       </div>
-      <div className="mt-8 text-xs text-slate-600 font-inter">
-        Rikkei Education â€¢ Module 3 â€¢ Session 2
-      </div>
-    </div>
+    </CartProvider>
   )
 }

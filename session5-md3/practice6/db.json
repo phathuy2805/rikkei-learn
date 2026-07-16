@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "fullName": "Nguyễn Văn Trỗi",
+      "email": "troi.nguyen@company.com",
+      "phone": "0987654321",
+      "role": "Senior Developer",
+      "department": "Engineering",
+      "address": "123 Đường Láng, Hà Nội",
+      "salary": "35,000,000đ",
+      "status": "Active",
+      "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200"
+    }
+  ]
+}

@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react'
 import axios, { AxiosError } from 'axios'
+import { useEffect, useState } from 'react'
 
 interface UserProfile {
   id: string
@@ -86,7 +86,7 @@ export default function App() {
           response: JSON.stringify(res.data, null, 2)
         })
       }
-    } catch (err) {
+    } catch{
       setErrorFeedback("Không thể kết nối đến Mock Server. Hãy chạy lệnh 'npm run server' ở cổng 3004.")
     } finally {
       setIsLoading(false)
@@ -94,7 +94,10 @@ export default function App() {
   }
 
   useEffect(() => {
-    fetchDbState()
+    const init = async () => {
+      await fetchDbState()
+    }
+    init()
   }, [])
 
   // Action 1: PATCH - Partial Update (Updates ONLY modified fields)
@@ -216,7 +219,7 @@ export default function App() {
       })
       setSuccessFeedback("Đã khôi phục cơ sở dữ liệu ban đầu thành công!")
       await fetchDbState(false)
-    } catch (err) {
+    } catch  {
       setErrorFeedback("Không thể khôi phục. Vui lòng kiểm tra lại server.")
     } finally {
       setIsLoading(false)

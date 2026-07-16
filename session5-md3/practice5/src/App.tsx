@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import axios, { AxiosError } from 'axios'
 
 // Define the structure of a Contact
@@ -33,19 +33,19 @@ export default function App() {
   const [validationErrors, setValidationErrors] = useState<{ name?: string; phone?: string }>({})
 
   // Helper to add system logs
-  const addLog = (type: 'info' | 'success' | 'error', message: string) => {
+  const addLog = useCallback((type: 'info' | 'success' | 'error', message: string) => {
     const time = new Date().toLocaleTimeString()
     setLogs(prev => [{ timestamp: time, type, message }, ...prev])
-  }
+  }, [])
 
   // Clear feedbacks helper
-  const clearFeedbacks = () => {
+  const clearFeedbacks = useCallback(() => {
     setErrorFeedback(null)
     setSuccessFeedback(null)
-  }
+  }, [])
 
   // GET: Fetch all contacts from Mock Server
-  const fetchContacts = async (showLog = true) => {
+  const fetchContacts = useCallback(async (showLog = true) => {
     setIsLoading(true)
     clearFeedbacks()
     if (showLog) addLog('info', 'Đang tải danh sách danh bạ...')
@@ -60,12 +60,24 @@ export default function App() {
       setErrorFeedback(`Không thể kết nối tới server. Vui lòng đảm bảo json-server đang chạy ở cổng 3004.`)
       addLog('error', `Thất bại khi lấy danh sách: ${errorMsg}`)
     }
-  }
+  }, [clearFeedbacks, addLog])
 
   // Run on component mount
   useEffect(() => {
-    fetchContacts()
-  }, [])
+    let active = true
+    const load = async () => {
+      // Yield control back to the event loop so the fetch and its immediate setState
+      // calls run asynchronously, avoiding cascading renders on mount
+      await Promise.resolve()
+      if (active) {
+        fetchContacts()
+      }
+    }
+    load()
+    return () => {
+      active = false
+    }
+  }, [fetchContacts])
 
   // Input Validation
   const validateForm = (): boolean => {

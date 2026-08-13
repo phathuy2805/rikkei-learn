@@ -7,3 +7,4 @@
 - tạo migration đầu tiên
 - generate ra type
 - cài typescript
+3. kết nối với express và log database dòng đầu tiên thử

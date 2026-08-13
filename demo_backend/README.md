@@ -9,4 +9,5 @@
 - cài typescript
 3. kết nối với express và log database dòng đầu tiên thử
 - kết nối server express trước
+- tạo folder structure
 - Tạo các api để kết nối prisma

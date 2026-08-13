@@ -1,0 +1,23 @@
+{
+    "name": "demo_backend",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "module",
+    "dependencies": {
+        "@prisma/adapter-mariadb": "^7.9.1",
+        "@prisma/client": "^7.9.1",
+        "dotenv": "^17.4.2",
+        "express": "^5.2.1"
+    },
+    "devDependencies": {
+        "@types/node": "^26.2.0",
+        "prisma": "^7.9.1"
+    }
+}

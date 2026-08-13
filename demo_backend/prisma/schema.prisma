@@ -11,3 +11,24 @@ generator client {
 datasource db {
   provider = "mysql"
 }
+
+model Category {
+  id Int @id @default(autoincrement())
+  name String 
+  status CategoryStatus @default(ACTIVE) 
+  products Product[]
+}
+
+model Product {
+  id Int @id @default(autoincrement())
+  name String 
+  price Decimal 
+  categoryId Int
+  category Category @relation(fields: [categoryId], references: [id]) 
+}
+
+
+enum CategoryStatus {
+  ACTIVE
+  INACTIVE
+}

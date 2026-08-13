@@ -1,3 +1,4 @@
+import bodyParser from 'body-parser'
 import cors from 'cors'
 import 'dotenv/config'
 import express, {
@@ -9,6 +10,7 @@ import apiRouter from './api/apiRouter'
 
 const app = express()
 const port = process.env.PORT ?? 3000
+app.use(bodyParser.json())
 app.use(cors())
 
 app.use('/api', apiRouter)

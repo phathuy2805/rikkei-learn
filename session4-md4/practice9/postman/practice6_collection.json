@@ -1,0 +1,367 @@
+{
+  "info": {
+    "name": "Practice 6 API Collection - Advanced",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "GET User 1 Orders - No Params",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code là 200\", () => {",
+              "  pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test(\"Response đúng cấu trúc đã thiết kế\", () => {",
+              "  const json = pm.response.json();",
+              "  pm.expect(json).to.have.property('success', true);",
+              "  pm.expect(json.data).to.be.an('array');",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/v1/users/1/orders",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "users",
+            "1",
+            "orders"
+          ]
+        }
+      }
+    },
+    {
+      "name": "GET User 2 Orders - Filter Status Paid",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code là 200\", () => {",
+              "  pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test(\"Response đúng cấu trúc đã thiết kế\", () => {",
+              "  const json = pm.response.json();",
+              "  pm.expect(json).to.have.property('success', true);",
+              "  pm.expect(json.data).to.be.an('array');",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/v1/users/2/orders?status=paid",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "users",
+            "2",
+            "orders"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "paid"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "GET User 2 Orders - Limit 2",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code là 200\", () => {",
+              "  pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test(\"Response đúng cấu trúc đã thiết kế\", () => {",
+              "  const json = pm.response.json();",
+              "  pm.expect(json).to.have.property('success', true);",
+              "  pm.expect(json.data).to.be.an('array');",
+              "  pm.expect(json.data.length).to.be.at.most(2);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/v1/users/2/orders?limit=2",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "users",
+            "2",
+            "orders"
+          ],
+          "query": [
+            {
+              "key": "limit",
+              "value": "2"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "GET User 3 Orders - Status Pending and Limit 1",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code là 200\", () => {",
+              "  pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test(\"Response đúng cấu trúc đã thiết kế\", () => {",
+              "  const json = pm.response.json();",
+              "  pm.expect(json).to.have.property('success', true);",
+              "  pm.expect(json.data).to.be.an('array');",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/v1/users/3/orders?status=pending&limit=1",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "users",
+            "3",
+            "orders"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "pending"
+            },
+            {
+              "key": "limit",
+              "value": "1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "GET User 99 Orders - User Not Found",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code là 404\", () => {",
+              "  pm.response.to.have.status(404);",
+              "});",
+              "",
+              "pm.test(\"Response đúng cấu trúc lỗi\", () => {",
+              "  const json = pm.response.json();",
+              "  pm.expect(json).to.have.property('success', false);",
+              "  pm.expect(json).to.have.property('code', 'USER_NOT_FOUND');",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/v1/users/99/orders",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "users",
+            "99",
+            "orders"
+          ]
+        }
+      }
+    },
+    {
+      "name": "POST Order - Empty Body",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code là 400\", () => {",
+              "  pm.response.to.have.status(400);",
+              "});",
+              "",
+              "pm.test(\"Response đúng cấu trúc lỗi empty body\", () => {",
+              "  const json = pm.response.json();",
+              "  pm.expect(json).to.have.property('success', false);",
+              "  pm.expect(json).to.have.property('code', 'EMPTY_BODY');",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "{{base_url}}/api/v1/users/1/orders",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "users",
+            "1",
+            "orders"
+          ]
+        }
+      }
+    },
+    {
+      "name": "POST Order - Invalid JSON",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code là 400\", () => {",
+              "  pm.response.to.have.status(400);",
+              "});",
+              "",
+              "pm.test(\"Response đúng cấu trúc lỗi invalid json\", () => {",
+              "  const json = pm.response.json();",
+              "  pm.expect(json).to.have.property('success', false);",
+              "  pm.expect(json).to.have.property('code', 'INVALID_JSON');",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{invalid-json"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/v1/users/1/orders",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "users",
+            "1",
+            "orders"
+          ]
+        }
+      }
+    },
+    {
+      "name": "GET User 2 Orders - Limit Exceeded",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code là 400\", () => {",
+              "  pm.response.to.have.status(400);",
+              "});",
+              "",
+              "pm.test(\"Response đúng cấu trúc lỗi limit exceeded\", () => {",
+              "  const json = pm.response.json();",
+              "  pm.expect(json).to.have.property('success', false);",
+              "  pm.expect(json).to.have.property('code', 'LIMIT_EXCEEDED');",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/v1/users/2/orders?limit=99",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "users",
+            "2",
+            "orders"
+          ],
+          "query": [
+            {
+              "key": "limit",
+              "value": "99"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

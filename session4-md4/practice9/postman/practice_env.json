@@ -1,0 +1,13 @@
+{
+  "id": "e45dbf41-0cae-4f36-9a2d-1144062fb2e4",
+  "name": "Local Environment",
+  "values": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000",
+      "type": "default",
+      "enabled": true
+    }
+  ],
+  "_postman_variable_scope": "environment"
+}

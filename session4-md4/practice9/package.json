@@ -1,0 +1,12 @@
+{
+  "name": "practice9",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "test:api": "newman run postman/practice6_collection.json -e postman/practice_env.json --reporters cli,htmlextra --reporter-htmlextra-export reports/report.html"
+  },
+  "devDependencies": {
+    "newman": "^6.2.1",
+    "newman-reporter-htmlextra": "^1.23.1"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "practice7",
+  "version": "1.0.0",
+  "dependencies": {
+    "dotenv": "^17.4.2"
+  }
+}

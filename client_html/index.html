@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <form
+            id="uploadForm"
+            action="http://localhost:3000/api/users/upload-avatar"
+            method="POST"
+            enctype="multipart/form-data"
+        >
+            <input id="fileInput" name="avt" type="file" />
+            <button type="submit">up</button>
+        </form>
+
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.18.1/axios.min.js"
+            integrity="sha512-k0fcrB0wH2Vz5vizFLsfyul8yjbsMj+wvrgjc1bRjNq6Vx2GzwFfwbr15F6B926dq8FXHTxjEr6Fhfi1sXsRg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+        <script>
+            console.log('axios', axios);
+
+            const form = document.getElementById('uploadForm');
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const fileInput = document.getElementById('fileInput');
+                if (!fileInput.files[0]) {
+                    alert('Vui lòng chọn file trước!');
+                    return;
+                }
+
+                const formData = new FormData();
+                formData.append('avt', fileInput.files[0]);
+
+                try {
+                    const response = await axios.post(form.action, formData, {
+                        headers: {
+                            'Content-Type': 'multipart/form-data'
+                        }
+                    });
+                    console.log('Upload success:', response.data);
+                    alert('Upload thành công: ' + response.data);
+                } catch (error) {
+                    console.error('Upload error:', error);
+                    alert('Upload thất bại: ' + (error.response?.data || error.message));
+                }
+            });
+        </script>
+    </body>
+</html>

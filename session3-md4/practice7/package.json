@@ -1,0 +1,9 @@
+{
+  "name": "practice7",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "express": "^5.2.1",
+    "multer": "^2.2.0-beta.2"
+  }
+}

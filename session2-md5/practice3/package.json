@@ -1,0 +1,9 @@
+{
+  "name": "session2-md5-practice3",
+  "version": "1.0.0",
+  "description": "Handling Circular Dependency in NestJS with forwardRef",
+  "type": "module",
+  "scripts": {
+    "start": "nest start"
+  }
+}

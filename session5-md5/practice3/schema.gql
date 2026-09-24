@@ -1,0 +1,22 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Post {
+  content: String!
+  id: ID!
+  title: String!
+}
+
+type Query {
+  """Tìm kiếm đa hình trả về cả User và Post"""
+  search(query: String! = ""): [SearchResultUnion!]!
+}
+
+union SearchResultUnion = Post | User
+
+type User {
+  email: String!
+  id: ID!
+  name: String!
+}

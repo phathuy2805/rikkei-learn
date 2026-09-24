@@ -1,0 +1,9 @@
+{
+  "name": "session3-md5-practice1",
+  "version": "1.0.0",
+  "description": "Security Middleware IP Blocker in NestJS",
+  "type": "module",
+  "scripts": {
+    "start": "nest start"
+  }
+}

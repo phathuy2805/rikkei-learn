@@ -1,0 +1,9 @@
+{
+  "name": "session2-md5-practice5",
+  "version": "1.0.0",
+  "description": "Asynchronous Provider in NestJS",
+  "type": "module",
+  "scripts": {
+    "start": "nest start"
+  }
+}

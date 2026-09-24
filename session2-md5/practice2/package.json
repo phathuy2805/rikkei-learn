@@ -1,0 +1,9 @@
+{
+  "name": "session2-md5-practice2",
+  "version": "1.0.0",
+  "description": "Module Re-Exporting in NestJS",
+  "type": "module",
+  "scripts": {
+    "start": "nest start"
+  }
+}

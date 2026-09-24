@@ -1,0 +1,10 @@
+{
+  "name": "session2-md5-practice6",
+  "version": "1.0.0",
+  "description": "NestJS Monorepo Architecture with apps and shared libs",
+  "type": "module",
+  "scripts": {
+    "start:api": "nest start api",
+    "start:admin": "nest start admin"
+  }
+}

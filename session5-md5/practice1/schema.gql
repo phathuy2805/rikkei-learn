@@ -1,0 +1,25 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Product {
+  id: ID!
+  name: String!
+  price: Float!
+  status: ProductStatus!
+}
+
+"""Trạng thái sản phẩm"""
+enum ProductStatus {
+  DISCONTINUED
+  IN_STOCK
+  OUT_OF_STOCK
+}
+
+type Query {
+  """Lấy thông tin sản phẩm theo ID"""
+  product(id: Int!): Product!
+
+  """Lấy danh sách toàn bộ sản phẩm"""
+  products: [Product!]!
+}

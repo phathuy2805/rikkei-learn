@@ -1,0 +1,36 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input CreateOrderInput {
+  customerName: String!
+  items: [CreateOrderItemInput!]!
+}
+
+input CreateOrderItemInput {
+  price: Float!
+  productId: Int!
+  quantity: Int!
+}
+
+type Mutation {
+  createOrder(input: CreateOrderInput!): Order!
+}
+
+type Order {
+  createdAt: String!
+  customerName: String!
+  id: ID!
+  items: [OrderItem!]!
+  totalAmount: Float!
+}
+
+type OrderItem {
+  price: Float!
+  productId: Int!
+  quantity: Int!
+}
+
+type Query {
+  orders: [Order!]!
+}

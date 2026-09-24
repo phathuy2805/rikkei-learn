@@ -5,3 +5,11 @@
 *.sqlite3
 *.db
 *.db-journal
+
+# Ignore practice folders
+express_server_basic_demo/
+first_my_nest_sv/
+second_my_nest_sv/
+nestjs-final-project/
+
+

@@ -1,0 +1,9 @@
+{
+  "name": "session3-md5-practice2",
+  "version": "1.0.0",
+  "description": "Custom Business Exception in NestJS",
+  "type": "module",
+  "scripts": {
+    "start": "nest start"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "target": "ES2023",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "baseUrl": "./",
+    "paths": {
+      "@nestjs/*": ["../../nestjs-final-project/node_modules/@nestjs/*"],
+      "rxjs": ["../../nestjs-final-project/node_modules/rxjs"],
+      "rxjs/*": ["../../nestjs-final-project/node_modules/rxjs/*"],
+      "graphql": ["../../nestjs-final-project/node_modules/graphql"]
+    }
+  }
+}

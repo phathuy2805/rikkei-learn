@@ -1,0 +1,20 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+"""Kiểu dữ liệu Email tự định nghĩa có kiểm tra ký tự @"""
+scalar Email
+
+type Mutation {
+  registerUser(email: Email!, name: String!): User!
+}
+
+type Query {
+  users: [User!]!
+}
+
+type User {
+  email: Email!
+  id: ID!
+  name: String!
+}

@@ -1,0 +1,31 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
+
+jobs:
+  test:
+    name: Build and Run Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: './session7-md5/practice4/package.json'
+
+      - name: Install Dependencies
+        working-directory: ./session7-md5/practice4
+        run: npm install
+
+      - name: Execute Automated Unit Tests
+        working-directory: ./session7-md5/practice4
+        run: npm test

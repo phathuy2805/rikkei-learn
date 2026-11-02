@@ -11,7 +11,7 @@ RUN npm ci --legacy-peer-deps
 
 # Build Frontend (React + Vite)
 COPY frontend ./frontend
-RUN cd frontend && npm ci --legacy-peer-deps && npm run build
+RUN cd frontend && npm ci --legacy-peer-deps && npm run build && rm -rf node_modules
 
 COPY src ./src
 

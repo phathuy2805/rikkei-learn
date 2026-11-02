@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: shopfast-app
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - JWT_SECRET=shopfast-super-secure-production-jwt-secret-key-32chars
+      - DB_TYPE=postgres
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_USER=shopfast
+      - DB_PASSWORD=shopfast_secret_pass
+      - DB_NAME=shopfast_db
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - shopfast-net
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: shopfast-postgres
+    restart: always
+    environment:
+      - POSTGRES_USER=shopfast
+      - POSTGRES_PASSWORD=shopfast_secret_pass
+      - POSTGRES_DB=shopfast_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U shopfast -d shopfast_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - shopfast-net
+
+volumes:
+  postgres_data:
+
+networks:
+  shopfast-net:
+    driver: bridge

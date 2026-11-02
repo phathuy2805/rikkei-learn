@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopFast - Sàn Thương Mại Điện Tử Hiện Đại</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#" class="brand-logo" onclick="resetFilters()">
+        <span class="logo-icon">⚡</span>
+        <span class="logo-text">ShopFast</span>
+        <span class="badge-aws">AWS Ready</span>
+      </a>
+
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="Tìm kiếm điện thoại, laptop, phụ kiện..." oninput="debounceSearch()">
+        <button id="clearSearchBtn" class="clear-btn" onclick="clearSearch()" style="display:none;">✕</button>
+      </div>
+
+      <div class="nav-actions">
+        <button class="nav-btn" id="ordersNavBtn" onclick="openOrdersModal()" style="display:none;">
+          <span class="btn-icon">📋</span>
+          <span class="btn-text">Đơn hàng</span>
+        </button>
+
+        <button class="nav-btn cart-btn" onclick="toggleCartDrawer()">
+          <span class="btn-icon">🛒</span>
+          <span class="btn-text">Giỏ hàng</span>
+          <span class="cart-badge" id="cartCount">0</span>
+        </button>
+
+        <div id="authContainer">
+          <button class="btn btn-primary" onclick="openAuthModal('login')">Đăng nhập</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <span class="hero-tag">🔥 SIÊU ƯU ĐÃI THÁNG NÀY</span>
+      <h1 class="hero-title">Thiết Bị Công Nghệ Chính Hãng</h1>
+      <p class="hero-desc">Trải nghiệm mua sắm mượt mà, bảo hành chính hãng 12 tháng, miễn phí vận chuyển cho đơn hàng từ 500.000đ.</p>
+      <div class="hero-features">
+        <div class="feat-item"><span>🚀</span> Giao nhanh 2H</div>
+        <div class="feat-item"><span>🛡️</span> Cam kết 100% chính hãng</div>
+        <div class="feat-item"><span>🔄</span> Đổi trả trong 30 ngày</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content: Filter & Products -->
+  <main class="main-container">
+    <!-- Filter Bar -->
+    <div class="filter-bar">
+      <!-- Category Pills -->
+      <div class="category-pills" id="categoryPills">
+        <button class="pill-btn active" data-id="" onclick="selectCategory(null, this)">
+          <span>✨</span> Tất cả
+        </button>
+        <!-- Categories injected via JS -->
+      </div>
+
+      <!-- Secondary Filters: Price Range & Sort -->
+      <div class="filter-controls">
+        <div class="control-group">
+          <label>Khoảng giá:</label>
+          <select id="priceFilter" onchange="applyFilters()">
+            <option value="">Tất cả mức giá</option>
+            <option value="0-5000000">Dưới 5 triệu</option>
+            <option value="5000000-15000000">5 triệu - 15 triệu</option>
+            <option value="15000000-30000000">15 triệu - 30 triệu</option>
+            <option value="30000000-999999999">Trên 30 triệu</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label>Sắp xếp:</label>
+          <select id="sortFilter" onchange="applyFilters()">
+            <option value="newest">Mới nhất / Nổi bật</option>
+            <option value="price_asc">Giá tăng dần</option>
+            <option value="price_desc">Giá giảm dần</option>
+            <option value="rating">Đánh giá cao nhất</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="product-section">
+      <div class="section-header">
+        <h2 class="section-title">Danh Sách Sản Phẩm</h2>
+        <span class="product-count" id="productCount">Đang tải...</span>
+      </div>
+
+      <div class="product-grid" id="productGrid">
+        <!-- Rendered via JS -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Cart Slide-Over Drawer -->
+  <div class="drawer-overlay" id="cartOverlay" onclick="toggleCartDrawer()"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="drawer-header">
+      <div class="drawer-title">
+        <span>🛒</span> Giỏ hàng của bạn (<span id="cartDrawerCount">0</span>)
+      </div>
+      <button class="close-btn" onclick="toggleCartDrawer()">✕</button>
+    </div>
+
+    <div class="drawer-body" id="cartItemList">
+      <!-- Injected via JS -->
+    </div>
+
+    <div class="drawer-footer" id="cartFooter" style="display:none;">
+      <div class="summary-line">
+        <span>Tạm tính:</span>
+        <strong id="cartSubtotal">0 đ</strong>
+      </div>
+      <div class="summary-line">
+        <span>Phí vận chuyển:</span>
+        <span id="cartShipping">Miễn phí</span>
+      </div>
+      <div class="summary-line total-line">
+        <span>Tổng thanh toán:</span>
+        <strong id="cartTotal">0 đ</strong>
+      </div>
+      <button class="btn btn-primary btn-block" onclick="openCheckoutModal()">
+        Tiến hành đặt hàng
+      </button>
+    </div>
+  </aside>
+
+  <!-- Checkout Modal -->
+  <div class="modal" id="checkoutModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>📦 Xác Nhận Đặt Hàng</h3>
+        <button class="close-btn" onclick="closeCheckoutModal()">✕</button>
+      </div>
+      <div class="modal-body">
+        <form id="checkoutForm" onsubmit="handleCheckout(event)">
+          <div class="form-group">
+            <label>Họ và tên người nhận:</label>
+            <input type="text" id="checkoutName" required readonly class="readonly-input">
+          </div>
+          <div class="form-group">
+            <label>Số điện thoại nhận hàng (*):</label>
+            <input type="tel" id="checkoutPhone" placeholder="Ví dụ: 0912345678" required pattern="^0[0-9]{9,10}$">
+          </div>
+          <div class="form-group">
+            <label>Địa chỉ giao hàng (*):</label>
+            <textarea id="checkoutAddress" rows="2" placeholder="Số nhà, tên đường, phường/xã, quận/huyện, tỉnh/thành phố..." required></textarea>
+          </div>
+          <div class="order-preview">
+            <div class="summary-line">
+              <span>Tổng số lượng:</span>
+              <span id="checkoutTotalItems">0 món</span>
+            </div>
+            <div class="summary-line total-line">
+              <span>Tổng tiền thanh toán:</span>
+              <strong id="checkoutTotalAmount" class="text-primary">0 đ</strong>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block btn-lg" id="checkoutSubmitBtn">
+            Xác nhận thanh toán
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Orders History Modal -->
+  <div class="modal" id="ordersModal">
+    <div class="modal-card modal-lg">
+      <div class="modal-header">
+        <h3>📋 Lịch Sử Đơn Hàng Của Bạn</h3>
+        <button class="close-btn" onclick="closeOrdersModal()">✕</button>
+      </div>
+      <div class="modal-body" id="ordersList">
+        <!-- Rendered via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Auth Modal (Login / Register) -->
+  <div class="modal" id="authModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="auth-tabs">
+          <button class="tab-btn active" id="tabLogin" onclick="switchAuthTab('login')">Đăng nhập</button>
+          <button class="tab-btn" id="tabRegister" onclick="switchAuthTab('register')">Đăng ký</button>
+        </div>
+        <button class="close-btn" onclick="closeAuthModal()">✕</button>
+      </div>
+      <div class="modal-body">
+        <!-- Quick Demo Account Fill -->
+        <div class="demo-box" id="demoBox">
+          <div class="demo-text">💡 <strong>Tài khoản Demo có sẵn:</strong></div>
+          <div class="demo-btns">
+            <button type="button" class="btn-demo" onclick="fillDemoAccount('customer@shopfast.vn', 'Customer@123')">
+              👤 Khách hàng (customer@shopfast.vn)
+            </button>
+          </div>
+        </div>
+
+        <!-- Login Form -->
+        <form id="loginForm" onsubmit="handleLogin(event)">
+          <div class="form-group">
+            <label>Email:</label>
+            <input type="email" id="loginEmail" placeholder="customer@shopfast.vn" required>
+          </div>
+          <div class="form-group">
+            <label>Mật khẩu:</label>
+            <input type="password" id="loginPassword" placeholder="••••••••" required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block" id="loginBtn">Đăng nhập ngay</button>
+        </form>
+
+        <!-- Register Form -->
+        <form id="registerForm" onsubmit="handleRegister(event)" style="display:none;">
+          <div class="form-group">
+            <label>Họ và tên:</label>
+            <input type="text" id="regFullName" placeholder="Nguyễn Văn A" required>
+          </div>
+          <div class="form-group">
+            <label>Email:</label>
+            <input type="email" id="regEmail" placeholder="email@example.com" required>
+          </div>
+          <div class="form-group">
+            <label>Số điện thoại:</label>
+            <input type="tel" id="regPhone" placeholder="0901234567">
+          </div>
+          <div class="form-group">
+            <label>Mật khẩu (ít nhất 6 ký tự):</label>
+            <input type="password" id="regPassword" placeholder="••••••••" required minlength="6">
+          </div>
+          <button type="submit" class="btn btn-primary btn-block" id="regBtn">Tạo tài khoản</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toastContainer"></div>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <div class="footer-logo">⚡ ShopFast</div>
+        <p>Sàn thương mại điện tử phục vụ khách hàng trên toàn quốc với hạ tầng đám mây hiện đại AWS.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Liên kết nhanh</h4>
+        <a href="/api/docs" target="_blank">📄 Swagger API Docs</a>
+        <a href="/api/health" target="_blank">❤️ Hệ thống Health Check</a>
+      </div>
+      <div class="footer-col">
+        <h4>Hạ tầng triển khai</h4>
+        <p>✓ Node.js 20 LTS + NestJS 10</p>
+        <p>✓ Docker & AWS EC2 Container Ready</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 ShopFast. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

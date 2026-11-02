@@ -7,11 +7,11 @@ WORKDIR /app
 RUN apk add --no-cache python3 make g++
 
 COPY package*.json tsconfig*.json nest-cli.json ./
-RUN npm ci
+RUN npm ci --legacy-peer-deps
 
 # Build Frontend (React + Vite)
 COPY frontend ./frontend
-RUN cd frontend && npm ci && npm run build
+RUN cd frontend && npm ci --legacy-peer-deps && npm run build
 
 COPY src ./src
 
@@ -28,7 +28,7 @@ ENV PORT=3000
 RUN apk add --no-cache wget
 
 COPY package*.json ./
-RUN npm ci --only=production && npm cache clean --force
+RUN npm ci --omit=dev --legacy-peer-deps && npm cache clean --force
 
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/public ./public
@@ -38,6 +38,7 @@ HEALTHCHECK --interval=30s --timeout=3s --start-period=10s --retries=3 \
   CMD wget -qO- http://localhost:3000/api/health || exit 1
 
 EXPOSE 3000
+EXPOSE 80
 
 USER node
 

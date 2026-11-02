@@ -9,8 +9,11 @@ RUN apk add --no-cache python3 make g++
 COPY package*.json tsconfig*.json nest-cli.json ./
 RUN npm ci
 
+# Build Frontend (React + Vite)
+COPY frontend ./frontend
+RUN cd frontend && npm ci && npm run build
+
 COPY src ./src
-COPY public ./public
 
 RUN npm run build
 

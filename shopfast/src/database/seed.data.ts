@@ -32,8 +32,10 @@ export const SEED_PRODUCTS: SeedProduct[] = [
     price: 29490000,
     originalPrice: 34990000,
     stock: 25,
-    imageUrl: 'https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=600&auto=format&fit=crop&q=80',
-    description: 'Khung viền titan chuẩn hàng không vũ trụ, chip A17 Pro mạnh mẽ, camera tiềm vọng zoom quang học 5x sắc nét.',
+    imageUrl:
+      'https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=600&auto=format&fit=crop&q=80',
+    description:
+      'Khung viền titan chuẩn hàng không vũ trụ, chip A17 Pro mạnh mẽ, camera tiềm vọng zoom quang học 5x sắc nét.',
     rating: 4.9,
     categoryId: 1,
     isFeatured: true,
@@ -44,8 +46,10 @@ export const SEED_PRODUCTS: SeedProduct[] = [
     price: 27990000,
     originalPrice: 33490000,
     stock: 18,
-    imageUrl: 'https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=600&auto=format&fit=crop&q=80',
-    description: 'Quyền năng Galaxy AI đỉnh cao, màn hình phẳng chống chói 2600 nits, bút S-Pen tích hợp.',
+    imageUrl:
+      'https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=600&auto=format&fit=crop&q=80',
+    description:
+      'Quyền năng Galaxy AI đỉnh cao, màn hình phẳng chống chói 2600 nits, bút S-Pen tích hợp.',
     rating: 4.8,
     categoryId: 1,
     isFeatured: true,
@@ -56,8 +60,10 @@ export const SEED_PRODUCTS: SeedProduct[] = [
     price: 49990000,
     originalPrice: 53990000,
     stock: 12,
-    imageUrl: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=600&auto=format&fit=crop&q=80',
-    description: 'Hiệu năng đồ hoạ vượt trội với chip M3 Pro, màn hình Liquid Retina XDR 120Hz siêu thực, pin 18 giờ.',
+    imageUrl:
+      'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=600&auto=format&fit=crop&q=80',
+    description:
+      'Hiệu năng đồ hoạ vượt trội với chip M3 Pro, màn hình Liquid Retina XDR 120Hz siêu thực, pin 18 giờ.',
     rating: 5.0,
     categoryId: 2,
     isFeatured: true,
@@ -68,8 +74,10 @@ export const SEED_PRODUCTS: SeedProduct[] = [
     price: 38500000,
     originalPrice: 42000000,
     stock: 15,
-    imageUrl: 'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=600&auto=format&fit=crop&q=80',
-    description: 'Thiết kế nhôm nguyên khối tương lai, phím chức năng cảm ứng vô hình, thời lượng pin cả ngày.',
+    imageUrl:
+      'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=600&auto=format&fit=crop&q=80',
+    description:
+      'Thiết kế nhôm nguyên khối tương lai, phím chức năng cảm ứng vô hình, thời lượng pin cả ngày.',
     rating: 4.7,
     categoryId: 2,
     isFeatured: false,
@@ -80,8 +88,10 @@ export const SEED_PRODUCTS: SeedProduct[] = [
     price: 6790000,
     originalPrice: 8490000,
     stock: 40,
-    imageUrl: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&auto=format&fit=crop&q=80',
-    description: 'Công nghệ chống ồn chủ động hàng đầu ngành, âm thanh Hi-Res Audio, thời lượng pin lên đến 30 giờ.',
+    imageUrl:
+      'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&auto=format&fit=crop&q=80',
+    description:
+      'Công nghệ chống ồn chủ động hàng đầu ngành, âm thanh Hi-Res Audio, thời lượng pin lên đến 30 giờ.',
     rating: 4.9,
     categoryId: 3,
     isFeatured: true,
@@ -92,8 +102,10 @@ export const SEED_PRODUCTS: SeedProduct[] = [
     price: 2850000,
     originalPrice: 3200000,
     stock: 30,
-    imageUrl: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600&auto=format&fit=crop&q=80',
-    description: 'Thiết kế Low-profile siêu mỏng, kết nối Bluetooth 5.1 / 2.4GHz / Type-C, switch Gateron mượt mà.',
+    imageUrl:
+      'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600&auto=format&fit=crop&q=80',
+    description:
+      'Thiết kế Low-profile siêu mỏng, kết nối Bluetooth 5.1 / 2.4GHz / Type-C, switch Gateron mượt mà.',
     rating: 4.8,
     categoryId: 3,
     isFeatured: false,
@@ -104,8 +116,10 @@ export const SEED_PRODUCTS: SeedProduct[] = [
     price: 2190000,
     originalPrice: 2490000,
     stock: 50,
-    imageUrl: 'https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=600&auto=format&fit=crop&q=80',
-    description: 'Cuộn siêu tốc MagSpeed, click êm ái Quiet Clicks, cảm biến 8000 DPI trên mọi bề mặt kính.',
+    imageUrl:
+      'https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=600&auto=format&fit=crop&q=80',
+    description:
+      'Cuộn siêu tốc MagSpeed, click êm ái Quiet Clicks, cảm biến 8000 DPI trên mọi bề mặt kính.',
     rating: 4.9,
     categoryId: 3,
     isFeatured: false,
@@ -116,8 +130,10 @@ export const SEED_PRODUCTS: SeedProduct[] = [
     price: 20490000,
     originalPrice: 21990000,
     stock: 20,
-    imageUrl: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&auto=format&fit=crop&q=80',
-    description: 'Khung vỏ titan chống va đập, màn hình 3000 nits siêu sáng dưới nắng gắt, pin 72 giờ ở chế độ tiết kiệm.',
+    imageUrl:
+      'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&auto=format&fit=crop&q=80',
+    description:
+      'Khung vỏ titan chống va đập, màn hình 3000 nits siêu sáng dưới nắng gắt, pin 72 giờ ở chế độ tiết kiệm.',
     rating: 4.9,
     categoryId: 4,
     isFeatured: true,
@@ -128,8 +144,10 @@ export const SEED_PRODUCTS: SeedProduct[] = [
     price: 22990000,
     originalPrice: 25490000,
     stock: 14,
-    imageUrl: 'https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=600&auto=format&fit=crop&q=80',
-    description: 'Sạc năng lượng mặt trời thông minh, bản đồ Topo đa lục địa, đèn pin LED tích hợp cho thám hiểm.',
+    imageUrl:
+      'https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=600&auto=format&fit=crop&q=80',
+    description:
+      'Sạc năng lượng mặt trời thông minh, bản đồ Topo đa lục địa, đèn pin LED tích hợp cho thám hiểm.',
     rating: 4.8,
     categoryId: 4,
     isFeatured: false,
